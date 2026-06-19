@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Custom glow keyframe animations */
+  --animate-shine: shine 1s ease-out forwards;
+  
+  @keyframes shine {
+    0% {
+      transform: translateX(-150%) skewX(-30deg);
+    }
+    100% {
+      transform: translateX(250%) skewX(-30deg);
+    }
+  }
+}
+
+/* Base scroll behaviors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom modern thin scrollbar styling for dark cyber layout */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060608;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1b26;
+  border: 2px solid #060608;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(147, 51, 234, 0.4);
+}
