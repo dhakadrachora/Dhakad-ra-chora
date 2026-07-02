@@ -1,8 +1,23 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Monitor, Search, Youtube, PenTool, Megaphone, Clock, Star, Zap, Users } from "lucide-react";
-const rohitImg = "/src/assets/images/rohit_founder_1781870842914.jpg";
-
+import { 
+  Monitor, 
+  Search, 
+  Youtube, 
+  PenTool, 
+  Megaphone, 
+  Clock, 
+  Star, 
+  Zap, 
+  Users, 
+  GraduationCap, 
+  Briefcase, 
+  MapPin, 
+  Award, 
+  Languages,
+  CheckCircle2,
+  Cpu
+} from "lucide-react";
 export default function About() {
   const skills = [
     {
@@ -42,6 +57,15 @@ export default function About() {
       description: "Informative, engaging, and 100% human-crafted articles structured for high-intent search queries to clear AdSense approval checks easily."
     },
     {
+      title: "AI Training & Evaluation",
+      subtitle: "Data Annotation & Model Tuning",
+      icon: Cpu,
+      progress: "96%",
+      color: "from-amber-500 to-yellow-400",
+      accent: "rgba(245, 158, 11, 0.4)",
+      description: "High-quality model responses tuning, reinforcement learning from human feedback (RLHF), precise prompt engineering, and semantic data annotation."
+    },
+    {
       title: "Digital Marketing & Branding",
       subtitle: "Beginner-Friendly Business Scaling",
       icon: Megaphone,
@@ -79,7 +103,7 @@ export default function About() {
           </h2>
           
           <p className="font-sans text-zinc-400 text-sm sm:text-base">
-            Dhakar Ra Chora represents premium design execution, advanced SEO algorithms, and viral creator growth. I turn static ideas into high-converting revenue streams.
+            Engineered with modern Apple and Vercel-inspired designs, I deliver pixel-perfect digital experiences, advanced search engine optimizations, and high-impact custom assets for brands.
           </p>
         </div>
 
@@ -89,24 +113,10 @@ export default function About() {
           <div className="lg:col-span-4 space-y-6">
             <div className="p-6 rounded-2xl bg-zinc-950/60 border border-zinc-900/80 backdrop-blur-sm space-y-6">
               
-              {/* Profile Bio Headshot Mockup Asset */}
-              <div className="relative w-24 h-24 rounded-2xl overflow-hidden bg-gradient-to-tr from-blue-500 to-purple-500 p-[1.5px] shadow-[0_0_15px_rgba(147,51,234,0.3)]">
-                <img
-                  src={rohitImg}
-                  alt="Rohit - Dhakad Ra Chora Profile"
-                  className="w-full h-full object-cover rounded-[14px]"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                    const fallback = e.currentTarget.parentElement?.querySelector(".avatar-fallback");
-                    if (fallback) {
-                      fallback.classList.remove("hidden");
-                      fallback.classList.add("flex");
-                    }
-                  }}
-                />
-                <div className="avatar-fallback hidden absolute inset-0 bg-gradient-to-tr from-purple-600 via-[#10b981] to-emerald-500 items-center justify-center font-sans font-black text-white text-2xl uppercase rounded-[14px]">
-                  RD
+              {/* Profile Bio Headshot Monogram Badge */}
+              <div className="relative w-24 h-24 rounded-2xl overflow-hidden bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-600 p-[1.5px] shadow-[0_0_15px_rgba(147,51,234,0.3)]">
+                <div className="w-full h-full bg-zinc-900 flex items-center justify-center font-sans font-black text-white text-3xl tracking-tight uppercase rounded-[14px]">
+                  RKN
                 </div>
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2 pointer-events-none z-10">
                   <span className="text-[8px] font-bold text-[#10b981] flex items-center gap-1">
@@ -117,16 +127,42 @@ export default function About() {
 
               <div className="space-y-3">
                 <h3 className="font-sans font-black text-xl text-white">
-                  Rohit (Dhakad)
+                  Rohit Kumar Nagar
                 </h3>
                 <p className="font-mono text-xs text-purple-400 uppercase tracking-widest leading-none">
-                  Founder & Principal Lead
+                  AI Specialist & Growth Architect
                 </p>
               </div>
 
               <p className="font-sans text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                As a passionate modern growth mechanic, I understand that beginners and small brands struggle with exorbitant web design quotes. My mission is to build beautiful, functional, ultra-high-speed platforms that fit your budget, but perform alongside massive corporation sites. We scale together.
+                As a high-speed digital growth architect, I deliver top-tier platforms that rank number one, drive high-CTR clicks, and optimize custom AI algorithms. Combining an analytical engineering mindset with high-conversion creative strategy, I provide remote-ready execution, problem-solving speed, and fast learning capabilities for clients worldwide.
               </p>
+
+              {/* Core Executive Highlights Badge Grid */}
+              <div className="pt-2">
+                <span className="block text-[8px] font-mono text-zinc-500 uppercase tracking-widest font-black mb-2.5">Core Executive Profile Highlights</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {[
+                    "30+ Freelance Projects",
+                    "Web Development",
+                    "SEO",
+                    "Content Writing",
+                    "Graphic Design",
+                    "AI Tools",
+                    "WordPress",
+                    "Problem Solving",
+                    "Remote Ready",
+                    "Fast Learner"
+                  ].map((highlight, idx) => (
+                    <span 
+                      key={idx} 
+                      className="text-[9px] font-mono font-bold bg-blue-500/10 hover:bg-blue-500/15 text-blue-400 dark:text-blue-300 px-2.5 py-1 rounded-full border border-blue-500/20 shadow-sm transition-colors cursor-default"
+                    >
+                      ✦ {highlight}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
               {/* Instant Trust Key Metrics Rows */}
               <div className="space-y-3 pt-3 border-t border-zinc-900">
@@ -165,7 +201,7 @@ export default function About() {
           {/* Interactive Skills Cards Grid Column */}
           <div className="lg:col-span-8 space-y-4">
             <h3 className="font-sans text-xs font-black uppercase text-zinc-500 tracking-widest pl-2 mb-2">
-              Dhakad core skill expertise
+              Rohit's core skill expertise
             </h3>
             
             <div className="space-y-4">
@@ -242,6 +278,170 @@ export default function About() {
           </div>
 
         </div>
+
+        {/* --- OFFICIAL RESUME & CREDENTIALS SUBSECTION --- */}
+        <div className="mt-24 pt-16 border-t border-zinc-900/80 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 via-transparent to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-3 relative z-10">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[#10b981] font-mono text-[10px] uppercase tracking-widest font-black">
+              <Award className="w-3.5 h-3.5" /> Verified Qualifications
+            </span>
+            <h3 className="font-sans text-2xl sm:text-3xl font-black text-white tracking-tight">
+              Professional Resume & Education
+            </h3>
+            <p className="font-sans text-zinc-400 text-xs sm:text-sm">
+              An optimal blend of technical electronics discipline and digital marketing expertise.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
+            
+            {/* COLUMN 1: REMOTE FREELANCE EXPERIENCE */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-2.5 pb-2 border-b border-zinc-900">
+                <Briefcase className="w-5 h-5 text-purple-400" />
+                <h4 className="font-sans font-black text-white text-lg">Freelance Milestones</h4>
+                <span className="ml-auto text-[10px] font-mono font-bold bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded border border-purple-500/20">
+                  2024 - Present
+                </span>
+              </div>
+
+              <div className="space-y-4">
+                {/* Milestone 1 */}
+                <div className="p-5 rounded-2xl bg-zinc-950/80 border border-zinc-900 flex gap-4">
+                  <div className="p-2 h-fit rounded-lg bg-purple-500/10 text-purple-400 font-mono text-xs font-black">
+                    30+
+                  </div>
+                  <div className="space-y-1 text-left">
+                    <h5 className="font-sans font-bold text-white text-sm">Completed Freelance Projects</h5>
+                    <p className="font-sans text-xs text-zinc-400 leading-relaxed">
+                      Executed a versatile portfolio of remote client contracts covering high-conversion landing page design, WordPress/Blogger optimization, and custom graphic layouts.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Milestone 2 */}
+                <div className="p-5 rounded-2xl bg-zinc-950/80 border border-zinc-900 flex gap-4">
+                  <div className="p-2 h-fit rounded-lg bg-emerald-500/10 text-[#10b981]">
+                    <Search className="w-4 h-4" />
+                  </div>
+                  <div className="space-y-1 text-left">
+                    <h5 className="font-sans font-bold text-white text-sm">
+                      Self-Run SEO Blog (<a href="https://aaryankelvin.online" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">aaryankelvin.online</a>)
+                    </h5>
+                    <p className="font-sans text-xs text-zinc-400 leading-relaxed">
+                      Independently publish biography articles and Instagram optimization guides. Harnesses technical SEO silos to secure over 100+ organic visitors every single day.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Milestone 3 */}
+                <div className="p-5 rounded-2xl bg-zinc-950/80 border border-zinc-900 flex gap-4">
+                  <div className="p-2 h-fit rounded-lg bg-blue-500/10 text-blue-400">
+                    <Cpu className="w-4 h-4" />
+                  </div>
+                  <div className="space-y-1 text-left">
+                    <h5 className="font-sans font-bold text-white text-sm">AI-Assisted App Building & Prototyping</h5>
+                    <p className="font-sans text-xs text-zinc-400 leading-relaxed">
+                      Pioneered state-of-the-art prompt workflows using Claude and ChatGPT to plan, structure, and bootstrap interactive application interfaces for remote project contracts.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* COLUMN 2: ACADEMIC & TECHNICAL EDUCATION */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-2.5 pb-2 border-b border-zinc-900">
+                <GraduationCap className="w-5 h-5 text-emerald-400" />
+                <h4 className="font-sans font-black text-white text-lg">Academic History</h4>
+                <span className="ml-auto text-[10px] font-mono font-bold bg-emerald-500/10 text-[#10b981] px-2 py-0.5 rounded border border-emerald-500/20">
+                  Verified Records
+                </span>
+              </div>
+
+              <div className="space-y-4">
+                {/* Edu 1: B.A */}
+                <div className="p-5 rounded-2xl bg-[#0a0d14]/60 border border-zinc-900 flex gap-4 text-left">
+                  <div className="h-10 w-10 rounded-xl bg-zinc-950 border border-zinc-800 flex items-center justify-center shrink-0">
+                    <Award className="w-5 h-5 text-amber-500" />
+                  </div>
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <h5 className="font-sans font-extrabold text-white text-sm">Bachelor of Arts (B.A.)</h5>
+                      <span className="font-mono text-[10px] text-zinc-500">Graduated</span>
+                    </div>
+                    <p className="font-sans text-xs text-zinc-400">Kota, Rajasthan, India</p>
+                    <p className="font-sans text-[11px] text-zinc-500 leading-normal">
+                      Developed advanced verbal, written, and cross-cultural communication skills in Hindi & English, laying a deep foundation for high-converting blog copywriting.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Edu 2: ITI Electronics */}
+                <div className="p-5 rounded-2xl bg-[#0a0d14]/60 border border-zinc-900 flex gap-4 text-left">
+                  <div className="h-10 w-10 rounded-xl bg-zinc-950 border border-zinc-800 flex items-center justify-center shrink-0">
+                    <Cpu className="w-5 h-5 text-blue-400" />
+                  </div>
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <h5 className="font-sans font-extrabold text-white text-sm">ITI — Electronics Mechanic</h5>
+                      <span className="font-mono text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded">Pass Out: 2024</span>
+                    </div>
+                    <p className="font-sans text-xs text-zinc-400">Government ITI, Sangod, Rajasthan, India</p>
+                    <p className="font-sans text-[11px] text-zinc-500 leading-normal">
+                      Mastered electronics repair, troubleshooting circuit schematics, multimeter testing, precision soldering/desoldering, and hardware debugging.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Edu 3: School */}
+                <div className="p-5 rounded-2xl bg-[#0a0d14]/60 border border-zinc-900 flex gap-4 text-left">
+                  <div className="h-10 w-10 rounded-xl bg-zinc-950 border border-zinc-800 flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-purple-400" />
+                  </div>
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <h5 className="font-sans font-extrabold text-white text-sm">Senior Secondary (12th RBSE)</h5>
+                      <span className="font-mono text-[10px] text-zinc-500">Pass Out: 2022</span>
+                    </div>
+                    <p className="font-sans text-xs text-zinc-400">Govt. Sr. Sec. School, Dhoti, Kota – 61.00% (First Division)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* ADDITIONAL METRICS BAR */}
+          <div className="mt-8 p-6 rounded-2xl bg-zinc-950/60 border border-zinc-900 relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-left">
+            <div className="space-y-1">
+              <span className="font-mono text-[9px] font-bold text-zinc-500 uppercase tracking-widest block">
+                Additional Personal Specifications
+              </span>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-zinc-300">
+                <div className="flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5 text-rose-500" />
+                  <span>Dhoti, Kota, Rajasthan, India</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Languages className="w-3.5 h-3.5 text-blue-400" />
+                  <span>Hindi (Native) | English (Professional)</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {["Honest & Responsible", "Hardworking & Dedicated", "Independent remote worker", "Adaptive Learner"].map((tag, i) => (
+                <span key={i} className="text-[10px] font-semibold bg-white/5 text-zinc-400 px-3 py-1 rounded-lg border border-white/5">
+                  ✓ {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

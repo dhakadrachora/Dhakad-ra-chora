@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Globe, Star, Mail, PhoneCall, Layers, ArrowUpRight, Sparkles } from "lucide-react";
+import { Menu, X, Globe, Star, Mail, PhoneCall, Layers, ArrowUpRight, Sparkles, Sun, Moon } from "lucide-react";
 
 interface NavbarProps {
   currency: "USD" | "INR";
   setCurrency: (currency: "USD" | "INR") => void;
   activeSection: string;
   setActiveSection: (sec: string) => void;
+  isDarkMode: boolean;
+  setIsDarkMode: (val: boolean) => void;
 }
 
 export default function Navbar({
   currency,
   setCurrency,
   activeSection,
-  setActiveSection
+  setActiveSection,
+  isDarkMode,
+  setIsDarkMode
 }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -81,7 +85,9 @@ export default function Navbar({
       id="main-navigation-bar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#07070a]/80 backdrop-blur-md border-b border-purple-500/10 py-3 shadow-lg shadow-purple-950/20"
+          ? isDarkMode
+            ? "bg-[#07070a]/80 backdrop-blur-md border-b border-purple-500/10 py-3 shadow-lg shadow-purple-950/20"
+            : "bg-[#ffffff]/85 backdrop-blur-md border-b border-zinc-200 py-3 shadow-lg shadow-zinc-200/40"
           : "bg-transparent py-5"
       }`}
     >
@@ -102,19 +108,21 @@ export default function Navbar({
             <div className="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-purple-600 p-[1.5px] overflow-hidden shadow-[0_0_15px_rgba(147,51,234,0.3)] group-hover:shadow-[0_0_20px_rgba(147,51,234,0.6)] transition-all">
               <div className="w-full h-full rounded-[10px] bg-[#0c0c12] flex items-center justify-center">
                 <span className="font-sans font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-300 to-pink-400 text-lg">
-                  DR
+                  RKN
                 </span>
               </div>
               {/* Spinning active indicator ring */}
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-600 mix-blend-color-dodge animate-spin [animation-duration:8s] -z-10" />
             </div>
             
-            <div className="flex flex-col">
-              <span className="font-sans font-black tracking-tight text-white text-lg leading-none group-hover:text-purple-300 transition-colors">
-                Dhakad Ra Chora
+            <div className="flex flex-col text-left">
+              <span className={`font-sans font-black tracking-tight text-lg leading-none transition-colors ${
+                isDarkMode ? "text-white group-hover:text-purple-300" : "text-zinc-900 group-hover:text-blue-600"
+              }`}>
+                Rohit Kumar Nagar
               </span>
-              <span className="font-mono text-[9px] text-purple-400/80 tracking-widest uppercase">
-                Premium Digital Craftsman
+              <span className="font-mono text-[9px] text-blue-500 dark:text-purple-400/80 tracking-widest uppercase font-bold">
+                AI & Development Expert
               </span>
             </div>
           </div>
@@ -148,15 +156,24 @@ export default function Navbar({
           </nav>
 
           {/* Config Controls & Call-to-action button */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
+            {/* Theme Toggle Button */}
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="p-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all cursor-pointer"
+              title={isDarkMode ? "Activate Light Mode" : "Activate Dark Mode"}
+            >
+              {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-blue-500" />}
+            </button>
+
             {/* Currency Selector Toggle */}
-            <div className="flex items-center gap-1.5 bg-zinc-900 border border-zinc-800 p-1 rounded-lg">
+            <div className="flex items-center gap-1 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-1 rounded-xl">
               <button
                 onClick={() => setCurrency("USD")}
-                className={`flex items-center gap-0.5 px-2 py-1 rounded text-[10px] font-mono font-bold transition-all ${
+                className={`flex items-center gap-0.5 px-2 py-1 rounded-lg text-[10px] font-mono font-bold transition-all cursor-pointer ${
                   currency === "USD"
-                    ? "bg-purple-600 text-white shadow-sm"
-                    : "text-zinc-500 hover:text-zinc-300"
+                    ? "bg-blue-600 text-white shadow-sm"
+                    : "text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300"
                 }`}
                 title="Switch pricing to USD"
               >
@@ -164,10 +181,10 @@ export default function Navbar({
               </button>
               <button
                 onClick={() => setCurrency("INR")}
-                className={`flex items-center gap-0.5 px-2 py-1 rounded text-[10px] font-mono font-bold transition-all ${
+                className={`flex items-center gap-0.5 px-2 py-1 rounded-lg text-[10px] font-mono font-bold transition-all cursor-pointer ${
                   currency === "INR"
-                    ? "bg-purple-600 text-white shadow-sm"
-                    : "text-zinc-500 hover:text-zinc-300"
+                    ? "bg-blue-600 text-white shadow-sm"
+                    : "text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300"
                 }`}
                 title="Switch pricing to Indian Rupee"
               >
@@ -179,7 +196,7 @@ export default function Navbar({
             <button
               id="header-cta-button"
               onClick={() => scrollTo("contact")}
-              className="relative px-4.5 py-1.8 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white text-xs font-bold tracking-wider rounded-xl hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition duration-300 group overflow-hidden flex items-center gap-1"
+              className="relative px-4.5 py-1.8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold tracking-wider rounded-xl hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition duration-300 group overflow-hidden flex items-center gap-1 cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5 text-cyan-200 animate-pulse" />
               <span>Let's Talk</span>
@@ -190,12 +207,21 @@ export default function Navbar({
 
           {/* Mobile Right Controls: Currency + Menu Button */}
           <div className="flex md:hidden items-center gap-3">
+            {/* Mobile Theme Toggle Button */}
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="p-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400"
+              title="Toggle Theme"
+            >
+              {isDarkMode ? <Sun className="w-4 h-4 text-amber-500" /> : <Moon className="w-4 h-4 text-blue-500" />}
+            </button>
+
             {/* Quick Currency Selector for mobile */}
             <button
               onClick={() => setCurrency(currency === "USD" ? "INR" : "USD")}
-              className="flex items-center gap-1 px-2.5 py-1 bg-zinc-900 border border-zinc-800 rounded-lg font-mono text-[10px] font-bold text-zinc-300 hover:border-purple-500/50"
+              className="flex items-center gap-1 px-2.5 py-1 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg font-mono text-[10px] font-bold text-zinc-600 dark:text-zinc-300"
             >
-              <Globe className="w-3 h-3 text-purple-400" />
+              <Globe className="w-3 h-3 text-blue-500 dark:text-purple-400" />
               <span>{currency === "USD" ? "$" : "₹"}</span>
             </button>
 
@@ -203,7 +229,7 @@ export default function Navbar({
             <button
               id="mobile-navigation-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-gray-400 hover:text-white"
+              className="p-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-gray-400 hover:text-zinc-900 dark:hover:text-white"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>

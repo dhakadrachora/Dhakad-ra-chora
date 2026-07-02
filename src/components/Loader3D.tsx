@@ -10,7 +10,7 @@ export default function Loader3D() {
     "Establishing Safe Sandbox Node...",
     "Igniting 3D Neon Particle Arrays...",
     "Mapping Responsive Portfolios...",
-    "Launching Dhakad Ra Chora Core v2.4..."
+    "Launching Rohit Kumar Nagar Core v2.4..."
   ];
 
   useEffect(() => {
@@ -89,7 +89,7 @@ export default function Loader3D() {
                 Loading Digital Experience
               </span>
               <h3 className="font-sans font-black text-2xl tracking-normal text-white">
-                Dhakad Ra Chora
+                Rohit Kumar Nagar
               </h3>
             </div>
 

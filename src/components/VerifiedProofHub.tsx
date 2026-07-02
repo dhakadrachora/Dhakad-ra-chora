@@ -50,7 +50,7 @@ export default function VerifiedProofHub() {
 
   const adsenseEarnings = [
     { month: "Month 1 (Pre-Optimized)", earnings: "$42.10", approved: "No" },
-    { month: "Month 2 (Dhakad Structure)", earnings: "$280.40", approved: "Pending Audit" },
+    { month: "Month 2 (Rohit's Structure)", earnings: "$280.40", approved: "Pending Audit" },
     { month: "Month 3 (Full Authority Scale)", earnings: "$1,142.80", approved: "Approved & Paid" },
   ];
 
@@ -425,10 +425,10 @@ export default function VerifiedProofHub() {
                           </div>
                         </div>
 
-                        {/* Dhakad Custom Contrast */}
+                        {/* Rohit's Custom Contrast */}
                         <div className="space-y-1.5">
                           <div className="flex justify-between text-xs font-mono">
-                            <span className="text-cyan-400 uppercase font-black font-bold">Rohit's Custom Contrast Formula (Dhakad Thumbnail)</span>
+                            <span className="text-cyan-400 uppercase font-black font-bold">Rohit's Custom Contrast Formula (Premium Thumbnail)</span>
                             <span className="text-[#22d3ee] font-black">{ytCtrCase.afterCTR} Boost</span>
                           </div>
                           

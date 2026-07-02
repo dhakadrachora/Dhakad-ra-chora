@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="text-center md:text-left space-y-2">
             <div className="flex items-center justify-center md:justify-start gap-2">
               <span className="font-sans font-black text-xl tracking-tight text-white">
-                Dhakad Ra Chora
+                Rohit Kumar Nagar
               </span>
               <span className="px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20 text-[#c084fc] font-mono text-[8px] uppercase tracking-wider font-extrabold">
                 Pro
@@ -34,7 +34,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-lg bg-zinc-950 border border-zinc-900 text-zinc-400 hover:text-red-500 hover:border-red-500/40 transition-colors"
-              title="Visit Dhakad Ra Chora on YouTube"
+              title="Visit Rohit Kumar Nagar on YouTube"
             >
               <Youtube className="w-4 h-4" />
             </a>
@@ -43,7 +43,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-lg bg-zinc-950 border border-zinc-900 text-zinc-400 hover:text-blue-400 hover:border-blue-400/40 transition-colors"
-              title="Visit Dhakad Ra Chora on Twitter"
+              title="Visit Rohit Kumar Nagar on Twitter"
             >
               <Twitter className="w-4 h-4" />
             </a>
@@ -52,7 +52,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-lg bg-zinc-950 border border-zinc-900 text-zinc-400 hover:text-purple-400 hover:border-purple-400/40 transition-colors"
-              title="Visit Dhakad Ra Chora on GitHub"
+              title="Visit Rohit Kumar Nagar on GitHub"
             >
               <Github className="w-4 h-4" />
             </a>
@@ -61,7 +61,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-lg bg-zinc-950 border border-zinc-900 text-zinc-400 hover:text-pink-400 hover:border-pink-401/40 transition-colors"
-              title="Visit Dhakad Ra Chora on Instagram"
+              title="Visit Rohit Kumar Nagar on Instagram"
             >
               <Instagram className="w-4 h-4" />
             </a>
@@ -76,7 +76,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-[11px] text-zinc-500">
           <div className="space-y-1">
             <div>
-              &copy; {currentYear} <strong>Dhakad Ra Chora</strong>. All Rights Reserved.
+              &copy; {currentYear} <strong>Rohit Kumar Nagar</strong>. All Rights Reserved.
             </div>
             <div className="text-[10px] text-zinc-650 flex items-center justify-center sm:justify-start gap-1">
               <span>Made with love for high-converting startups</span>

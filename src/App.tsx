@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Loader3D from "./components/Loader3D";
 import Background3D from "./components/Background3D";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import TechnicalSkills from "./components/TechnicalSkills";
+import AiSeoDivision from "./components/AiSeoDivision";
 import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
+import AestheticShowcase from "./components/AestheticShowcase";
 import VerifiedProofHub from "./components/VerifiedProofHub";
 import InteractivePlayground from "./components/InteractivePlayground";
 import Pricing from "./components/Pricing";
@@ -14,6 +17,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [currency, setCurrency] = useState<"USD" | "INR">("USD");
   const [activeSection, setActiveSection] = useState("hero");
 
@@ -49,13 +53,15 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen text-white bg-[#060608] selection:bg-purple-600 selection:text-white font-sans antialiased overflow-hidden">
+    <div className={`relative min-h-screen selection:bg-purple-600 selection:text-white font-sans antialiased overflow-hidden transition-colors duration-300 ${
+      isDarkMode ? "bg-[#060608] text-white" : "bg-[#f4f4f7] text-zinc-900"
+    }`}>
       
       {/* Cinematic 3D Spinner Intro Preloader */}
       <Loader3D />
 
       {/* Floating 3D Node Mesh Interactive Canvas */}
-      <Background3D />
+      <Background3D isDarkMode={isDarkMode} />
 
       {/* Primary Sticky Header */}
       <Navbar
@@ -63,6 +69,8 @@ export default function App() {
         setCurrency={setCurrency}
         activeSection={activeSection}
         setActiveSection={setActiveSection}
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
       />
 
       {/* Full-Screen Content Layout Section Columns */}
@@ -74,6 +82,9 @@ export default function App() {
         {/* 2. Biography About Section */}
         <About />
 
+        {/* 2.5 Technical Skills Section */}
+        <TechnicalSkills />
+
         {/* 3. High Fidelity Services Section */}
         <Services
           currency={currency}
@@ -81,8 +92,14 @@ export default function App() {
           scrollToSection={scrollToSection}
         />
 
+        {/* 3.5 AI & SEO Specialized Divisions */}
+        <AiSeoDivision />
+
         {/* 4. Portfolio Before-After Case Section */}
         <Portfolio />
+
+        {/* 10 bespoke projects, 20 thumbnails & Vector Graphics */}
+        <AestheticShowcase isDarkMode={isDarkMode} />
 
         {/* Real Verified Proof & Audit Dashboards */}
         <VerifiedProofHub />

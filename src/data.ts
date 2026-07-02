@@ -201,7 +201,7 @@ export const PRICING_PACKAGES: PricingPackage[] = [
   },
   {
     id: "pack-prem",
-    name: "Dhakad Authority",
+    name: "Nagar Brand Authority",
     price: "$499",
     description: "The ultimate solution for high-end professional agencies, brands, and creators wanting custom 3D web visuals and dominant marketing scales.",
     features: [
@@ -228,9 +228,9 @@ export const TESTIMONIALS: Testimonial[] = [
     author: "Aman Verma",
     role: "Founder",
     company: "TechPinnacle Media",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80",
     rating: 5,
-    text: "Rohit of Dhakad Ra Chora completely transformed our agency web experience. The 3D interactions are gorgeous and ultra-fast. We've captured 3 brand-new high-ticket corporate clients within days of our relaunch. His rates are unbelievably honest and the result is world-class performance!",
+    text: "Rohit Kumar Nagar completely transformed our agency web experience. The 3D interactions are gorgeous and ultra-fast. We've captured 3 brand-new high-ticket corporate clients within days of our relaunch. His rates are unbelievably honest and the result is world-class performance!",
     date: "14 days ago"
   },
   {

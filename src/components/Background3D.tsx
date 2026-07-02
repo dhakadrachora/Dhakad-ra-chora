@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-export default function Background3D() {
+export default function Background3D({ isDarkMode }: { isDarkMode: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef({ x: 0, y: 0, targetX: 0, targetY: 0 });
@@ -67,24 +67,29 @@ export default function Background3D() {
       shape: "circle" | "square" | "ring";
     }
 
-    const particles: Particle3D[] = Array.from({ length: 65 }, () => {
-      const colors = [
+    const particles: Particle3D[] = Array.from({ length: 45 }, () => {
+      const colors = isDarkMode ? [
         "rgba(59, 130, 246, 0.45)", // soft blue
         "rgba(147, 51, 234, 0.45)", // soft purple
         "rgba(236, 72, 153, 0.35)", // soft pink
         "rgba(6, 182, 212, 0.45)"   // cyan
+      ] : [
+        "rgba(29, 78, 216, 0.45)",  // deep blue
+        "rgba(109, 40, 217, 0.45)", // deep purple
+        "rgba(190, 24, 74, 0.35)",  // deep rose
+        "rgba(3, 105, 120, 0.45)"   // deep cyan
       ];
 
       return {
-        x: (Math.random() - 0.5) * 2000,
-        y: (Math.random() - 0.5) * 2000,
+        x: (Math.random() - 0.5) * 1800,
+        y: (Math.random() - 0.5) * 1800,
         z: Math.random() * 800 + 200,
-        size: Math.random() * 4 + 1,
+        size: Math.random() * 3.5 + 1,
         color: colors[Math.floor(Math.random() * colors.length)],
-        speed: Math.random() * 0.4 + 0.1,
-        rotSpeed: (Math.random() - 0.5) * 0.02,
+        speed: Math.random() * 0.3 + 0.1,
+        rotSpeed: (Math.random() - 0.5) * 0.015,
         angle: Math.random() * Math.PI * 2,
-        shape: Math.random() > 0.6 ? "ring" : Math.random() > 0.3 ? "circle" : "square"
+        shape: Math.random() > 0.65 ? "ring" : Math.random() > 0.3 ? "circle" : "square"
       };
     });
 
@@ -95,15 +100,15 @@ export default function Background3D() {
       mouseRef.current.y += (mouseRef.current.targetY - mouseRef.current.y) * 0.05;
 
       // Dark futuristic overlay gradient with cyber blue-violet undertones
-      ctx.fillStyle = "rgba(7, 7, 10, 0.15)";
+      ctx.fillStyle = isDarkMode ? "rgba(6, 6, 8, 0.2)" : "rgba(244, 244, 247, 0.2)";
       ctx.fillRect(0, 0, width, height);
 
       // Draw subtle futuristic cyber digital grid lines behind particles
-      ctx.strokeStyle = "rgba(147, 51, 234, 0.03)";
+      ctx.strokeStyle = isDarkMode ? "rgba(147, 51, 234, 0.02)" : "rgba(109, 40, 217, 0.02)";
       ctx.lineWidth = 1;
-      const gridSize = 80;
-      const gridOffsetX = (mouseRef.current.x * 0.2) % gridSize;
-      const gridOffsetY = (mouseRef.current.y * 0.2) % gridSize;
+      const gridSize = 100; // Larger grid size = fewer lines to draw
+      const gridOffsetX = (mouseRef.current.x * 0.15) % gridSize;
+      const gridOffsetY = (mouseRef.current.y * 0.15) % gridSize;
 
       for (let x = gridOffsetX; x < width; x += gridSize) {
         ctx.beginPath();
@@ -126,15 +131,15 @@ export default function Background3D() {
 
         if (p.z <= 10) {
           p.z = 1000;
-          p.x = (Math.random() - 0.5) * 2000;
-          p.y = (Math.random() - 0.5) * 2000;
+          p.x = (Math.random() - 0.5) * 1800;
+          p.y = (Math.random() - 0.5) * 1800;
         }
 
         // Apply 3D perspective projection formula
         const fov = 400; // focal length of viewer camera
         // Mouse influences X and Y coordinate displacements for perspective effect
-        const projX = ((p.x - mouseRef.current.x * 4) * fov) / p.z + width / 2;
-        const projY = ((p.y - mouseRef.current.y * 4) * fov) / p.z + height / 2;
+        const projX = ((p.x - mouseRef.current.x * 3) * fov) / p.z + width / 2;
+        const projY = ((p.y - mouseRef.current.y * 3) * fov) / p.z + height / 2;
         const scale = fov / p.z;
         const size = p.size * scale;
 
@@ -147,17 +152,24 @@ export default function Background3D() {
         ctx.translate(projX, projY);
         ctx.rotate(p.angle);
 
-        // Particle Glow
-        ctx.shadowBlur = Math.min(20, size * 2.5);
-        ctx.shadowColor = p.color;
+        // High Performance Glow alternative to expensive shadowBlur
         ctx.fillStyle = p.color;
         ctx.strokeStyle = p.color;
 
         if (p.shape === "circle") {
+          // Draw outer glow circle
+          ctx.fillStyle = p.color.replace("0.45", "0.08").replace("0.35", "0.06");
+          ctx.beginPath();
+          ctx.arc(0, 0, Math.max(1, size * 2.2), 0, Math.PI * 2);
+          ctx.fill();
+
+          // Draw core circle
+          ctx.fillStyle = p.color;
           ctx.beginPath();
           ctx.arc(0, 0, Math.max(0.5, size), 0, Math.PI * 2);
           ctx.fill();
         } else if (p.shape === "square") {
+          // Draw core square
           ctx.fillRect(-size / 2, -size / 2, Math.max(1, size), Math.max(1, size));
         } else {
           // Ring
@@ -171,8 +183,8 @@ export default function Background3D() {
       });
 
       // Draw beautiful top-left and bottom-right subtle aesthetic ambient light pools
-      const pColor1 = "rgba(147, 51, 234, 0.08)"; // violet glow
-      const pColor2 = "rgba(59, 130, 246, 0.08)"; // blue glow
+      const pColor1 = isDarkMode ? "rgba(147, 51, 234, 0.08)" : "rgba(147, 51, 234, 0.04)"; 
+      const pColor2 = isDarkMode ? "rgba(59, 130, 246, 0.08)" : "rgba(59, 130, 246, 0.04)"; 
 
       const glow1 = ctx.createRadialGradient(
         0, 0, 0,
@@ -203,13 +215,15 @@ export default function Background3D() {
       container.removeEventListener("mouseleave", handleMouseLeave);
       resizeObserver.unobserve(container);
     };
-  }, []);
+  }, [isDarkMode]);
 
   return (
     <div
       id="3d-background-container"
       ref={containerRef}
-      className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0 bg-[#060608]"
+      className={`fixed inset-0 w-screen h-screen overflow-hidden pointer-events-none z-0 transition-colors duration-300 ${
+        isDarkMode ? "bg-[#060608]" : "bg-[#f4f4f7]"
+      }`}
     >
       <canvas ref={canvasRef} className="block w-full h-full" />
     </div>

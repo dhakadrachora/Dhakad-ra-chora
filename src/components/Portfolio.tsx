@@ -142,7 +142,7 @@ export default function Portfolio() {
                         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                         referrerPolicy="no-referrer"
                         onError={(e) => {
-                          e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="%23090a0f"/><circle cx="400" cy="300" r="180" fill="%2310b981" opacity="0.15"/><rect x="100" y="80" width="600" height="440" rx="12" fill="%2311131e" stroke="%2310b981" stroke-width="2" opacity="0.8"/><circle cx="150" cy="130" r="15" fill="%2310b981"/><line x1="190" y1="130" x2="400" y2="130" stroke="%23374151" stroke-width="6"/><rect x="135" y="190" width="530" height="260" rx="6" fill="%2306070a"/><text x="400" y="320" fill="%2310b981" font-family="sans-serif" font-size="22" font-weight="900" text-anchor="middle" letter-spacing="2">DHAKAD HIGH-SPEED SYSTEM ACTIVE</text></svg>';
+                          e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="%23090a0f"/><circle cx="400" cy="300" r="180" fill="%2310b981" opacity="0.15"/><rect x="100" y="80" width="600" height="440" rx="12" fill="%2311131e" stroke="%2310b981" stroke-width="2" opacity="0.8"/><circle cx="150" cy="130" r="15" fill="%2310b981"/><line x1="190" y1="130" x2="400" y2="130" stroke="%23374151" stroke-width="6"/><rect x="135" y="190" width="530" height="260" rx="6" fill="%2306070a"/><text x="400" y="320" fill="%2310b981" font-family="sans-serif" font-size="22" font-weight="900" text-anchor="middle" letter-spacing="2">ROHIT HIGH-SPEED SYSTEM ACTIVE</text></svg>';
                         }}
                       />
                       <div className="absolute top-4 right-4 bg-emerald-600 text-white font-sans text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded">
@@ -184,7 +184,7 @@ export default function Portfolio() {
                       <Sparkles className="w-4 h-4" />
                     </div>
                     <span className="font-sans text-xs text-zinc-400">
-                      <strong>Dhakad Standard:</strong> We eliminate visual bloat, optimize image loads, integrate custom scripts, and inject high contrast callouts.
+                      <strong>Rohit's Standard:</strong> We eliminate visual bloat, optimize image loads, integrate custom scripts, and inject high contrast callouts.
                     </span>
                   </div>
                 </div>

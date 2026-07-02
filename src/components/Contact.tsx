@@ -108,11 +108,34 @@ export default function Contact({ selectedPlan, selectedService }: ContactProps)
               </h3>
               
               <p className="font-sans text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                Connect with Dhakad Ra Chora anytime. We accept custom project briefs directly through our secure interface below. Or copy our office email address to send raw file parameters or drive links directly.
+                Connect with Rohit Kumar Nagar (Dhakad) anytime. We accept custom project briefs directly through our secure interface below, or you can call us or visit our headquarters in Rajasthan.
               </p>
 
+              {/* Direct phone display block */}
+              <div className="p-5 rounded-2xl bg-zinc-950/80 border border-zinc-900 flex flex-col sm:flex-row sm:items-center justify-between gap-4 overflow-hidden text-left">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/15">
+                    <PhoneCall className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="block text-[8px] font-mono text-zinc-500 uppercase font-bold tracking-wider leading-none mb-1">
+                      Direct Mobile Phone
+                    </span>
+                    <a href="tel:+917424874912" className="font-sans font-extrabold text-white text-xs sm:text-sm hover:text-emerald-400 transition-colors">
+                      +91 7424874912
+                    </a>
+                  </div>
+                </div>
+                <a
+                  href="tel:+917424874912"
+                  className="flex items-center justify-center gap-1 px-3.5 py-2 rounded-lg bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 text-[10px] font-bold transition-all cursor-pointer"
+                >
+                  Call Instantly
+                </a>
+              </div>
+
               {/* Direct email display block */}
-              <div className="relative p-5 rounded-2xl bg-zinc-950/80 border border-zinc-900 flex flex-col sm:flex-row sm:items-center justify-between gap-4 overflow-hidden">
+              <div className="relative p-5 rounded-2xl bg-zinc-950/80 border border-zinc-900 flex flex-col sm:flex-row sm:items-center justify-between gap-4 overflow-hidden text-left">
                 <div className="flex items-center gap-3">
                   <div className="p-3 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/15">
                     <Mail className="w-5 h-5" />
@@ -128,6 +151,7 @@ export default function Contact({ selectedPlan, selectedService }: ContactProps)
                 </div>
 
                 <button
+                  type="button"
                   onClick={copyEmailToClipboard}
                   className="flex items-center gap-1.5 px-3 py-1.8 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white font-sans text-[10px] font-bold text-zinc-300 transition-all cursor-pointer"
                   title="Copy email to clipboard"

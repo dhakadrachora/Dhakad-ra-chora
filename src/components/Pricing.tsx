@@ -82,7 +82,7 @@ export default function Pricing({
                 ⚡ Limited Time Introductory Trial Deals
               </span>
               <h3 className="text-xl sm:text-2xl font-black text-white font-sans text-left">
-                Dhakad Starter Gateway Offers
+                Rohit's Starter Gateway Offers
               </h3>
               <p className="text-zinc-400 text-xs sm:text-sm text-left mt-1">
                 Risk-Free sample packages. Experience Rohit's premium design precision and copy optimizations before upgrading to higher scales.

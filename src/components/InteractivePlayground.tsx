@@ -419,7 +419,7 @@ export default function InteractivePlayground({
                       {/* Fake Video Meta Title and Statistics Info rows below */}
                       <div className="mt-4 flex items-start gap-3">
                         <div className="h-9 w-9 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-xs font-bold text-white shrink-0 shadow">
-                          DR
+                          RKN
                         </div>
                         <div className="space-y-1 w-full font-sans">
                           <div className="h-4 bg-zinc-900 rounded w-11/12 animate-pulse flex items-center px-1">
@@ -429,7 +429,7 @@ export default function InteractivePlayground({
                           </div>
                           
                           <div className="flex gap-2 text-[10px] text-zinc-500">
-                            <span>Dhakad Ra Chora</span>
+                            <span>Rohit Kumar Nagar</span>
                             <span>•</span>
                             <span className="text-purple-400 font-semibold">142K Views</span>
                             <span>•</span>
