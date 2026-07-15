@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import Tilt from "./Tilt";
 import { 
   FolderGit2, 
   Youtube, 
@@ -357,91 +358,98 @@ export default function AestheticShowcase({ isDarkMode }: { isDarkMode: boolean 
               {filteredProjects.map((p, index) => {
                 const IconComp = p.icon;
                 return (
-                  <motion.div
-                    key={p.id}
-                    layout
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.4 }}
-                    className="group relative flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900/80 shadow-sm hover:shadow-xl dark:hover:border-zinc-800 transition-all cursor-pointer overflow-hidden"
-                    onClick={() => setSelectedProject(p)}
+                  <Tilt 
+                    key={p.id} 
+                    className="h-full rounded-2xl" 
+                    max={12} 
+                    scale={1.02} 
+                    glowColor="rgba(59, 130, 246, 0.12)"
                   >
-                    {/* Floating Glow backdrop */}
-                    <div className="absolute -top-16 -right-16 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
+                    <motion.div
+                      layout
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.4 }}
+                      className="group relative flex flex-col justify-between h-full p-6 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900/80 shadow-sm hover:shadow-xl dark:hover:border-zinc-800 transition-colors cursor-pointer overflow-hidden"
+                      onClick={() => setSelectedProject(p)}
+                    >
+                      {/* Floating Glow backdrop */}
+                      <div className="absolute -top-16 -right-16 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
 
-                    <div>
-                      {/* Top bar with Icon & Metric Badge */}
-                      <div className="flex items-center justify-between gap-3 mb-6">
-                        <div className={`p-3 rounded-xl bg-gradient-to-tr ${p.gradient} text-white`}>
-                          <IconComp className="w-5 h-5" />
-                        </div>
-                        <span className="font-mono text-[10px] font-black tracking-wide uppercase px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-blue-600 dark:text-blue-400 border border-zinc-200/50 dark:border-zinc-800">
-                          {p.metric}
-                        </span>
-                      </div>
-
-                      {/* Title & Description */}
-                      <div className="space-y-2 text-left">
-                        <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-zinc-400">
-                          Project #{index + 1} • {p.category === "web" ? "Web Build" : p.category === "ai" ? "AI Logic" : "SEO Scale"}
-                        </span>
-                        <h4 className="font-sans font-black text-lg text-zinc-900 dark:text-white group-hover:text-blue-500 transition-colors">
-                          {p.title}
-                        </h4>
-                        <p className="font-sans text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                          {p.description}
-                        </p>
-                      </div>
-
-                      {/* Technologies tags */}
-                      <div className="flex flex-wrap gap-1.5 mt-4 text-left">
-                        {p.tech.map((t, idx) => (
-                          <span key={idx} className="text-[9px] font-mono font-bold bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 px-2 py-0.5 rounded border border-zinc-200/20 dark:border-zinc-800/60">
-                            {t}
+                      <div>
+                        {/* Top bar with Icon & Metric Badge */}
+                        <div className="flex items-center justify-between gap-3 mb-6">
+                          <div className={`p-3 rounded-xl bg-gradient-to-tr ${p.gradient} text-white`}>
+                            <IconComp className="w-5 h-5" />
+                          </div>
+                          <span className="font-mono text-[10px] font-black tracking-wide uppercase px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-blue-600 dark:text-blue-400 border border-zinc-200/50 dark:border-zinc-800">
+                            {p.metric}
                           </span>
-                        ))}
-                      </div>
-                    </div>
+                        </div>
 
-                    {/* Footer Action Buttons */}
-                    <div className="flex items-center justify-between gap-4 mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-900/60 text-xs">
-                      <div className="flex items-center gap-1.5 text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
-                        <Eye className="w-3.5 h-3.5" />
-                        <span className="font-semibold text-[11px]">Inspect Details</span>
+                        {/* Title & Description */}
+                        <div className="space-y-2 text-left">
+                          <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-zinc-400">
+                            Project #{index + 1} • {p.category === "web" ? "Web Build" : p.category === "ai" ? "AI Logic" : "SEO Scale"}
+                          </span>
+                          <h4 className="font-sans font-black text-lg text-zinc-900 dark:text-white group-hover:text-blue-500 transition-colors">
+                            {p.title}
+                          </h4>
+                          <p className="font-sans text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                            {p.description}
+                          </p>
+                        </div>
+
+                        {/* Technologies tags */}
+                        <div className="flex flex-wrap gap-1.5 mt-4 text-left">
+                          {p.tech.map((t, idx) => (
+                            <span key={idx} className="text-[9px] font-mono font-bold bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 px-2 py-0.5 rounded border border-zinc-200/20 dark:border-zinc-800/60">
+                              {t}
+                            </span>
+                          ))}
+                        </div>
                       </div>
 
-                      <div className="flex items-center gap-2">
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            window.open(p.githubUrl, "_blank");
-                          }}
-                          className="p-2 rounded-lg bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 text-zinc-600 dark:text-zinc-400 dark:hover:text-white transition-colors"
-                          title="View Source Code"
-                        >
-                          <Github className="w-3.5 h-3.5" />
-                        </button>
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            if(p.demoUrl.startsWith("#")) {
-                              const el = document.getElementById(p.demoUrl.substring(1));
-                              if (el) el.scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              window.open(p.demoUrl, "_blank");
-                            }
-                          }}
-                          className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-[10px] tracking-wider uppercase transition-colors"
-                        >
-                          <span>Launch</span>
-                          <ArrowUpRight className="w-3 h-3" />
-                        </button>
+                      {/* Footer Action Buttons */}
+                      <div className="flex items-center justify-between gap-4 mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-900/60 text-xs">
+                        <div className="flex items-center gap-1.5 text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
+                          <Eye className="w-3.5 h-3.5" />
+                          <span className="font-semibold text-[11px]">Inspect Details</span>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              window.open(p.githubUrl, "_blank");
+                            }}
+                            className="p-2 rounded-lg bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 text-zinc-600 dark:text-zinc-400 dark:hover:text-white transition-colors"
+                            title="View Source Code"
+                          >
+                            <Github className="w-3.5 h-3.5" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              if(p.demoUrl.startsWith("#")) {
+                                const el = document.getElementById(p.demoUrl.substring(1));
+                                if (el) el.scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                window.open(p.demoUrl, "_blank");
+                              }
+                            }}
+                            className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-[10px] tracking-wider uppercase transition-colors"
+                          >
+                            <span>Launch</span>
+                            <ArrowUpRight className="w-3 h-3" />
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  </Tilt>
                 );
               })}
             </div>
@@ -484,77 +492,84 @@ export default function AestheticShowcase({ isDarkMode }: { isDarkMode: boolean 
             {/* Masonry-Style Layout (utilizing tailwind columns for smooth height packing) */}
             <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
               {filteredThumbnails.map((t) => (
-                <motion.div
-                  key={t.id}
-                  layout
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="break-inside-avoid relative rounded-2xl overflow-hidden bg-[#0c0d14] border border-zinc-900 group shadow-lg cursor-pointer flex flex-col justify-between"
-                  style={{ boxShadow: `0 0 15px rgba(0,0,0,0.4)` }}
-                  onClick={() => setSelectedThumbnail(t)}
+                <Tilt 
+                  key={t.id} 
+                  className="break-inside-avoid rounded-2xl overflow-hidden mb-6" 
+                  max={10} 
+                  scale={1.03} 
+                  glowColor={t.glowColor || "rgba(147, 51, 234, 0.12)"}
                 >
-                  
-                  {/* Dynamic High Contrast Mockup Canvas */}
-                  <div className="relative aspect-[16/9] w-full overflow-hidden flex items-center justify-center p-4">
-                    {/* Ambient Neon Lighting Ring */}
-                    <div 
-                      className={`absolute inset-0 bg-gradient-to-tr ${t.color} opacity-20 group-hover:opacity-40 transition-opacity duration-300`} 
-                    />
+                  <motion.div
+                    layout
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="relative rounded-2xl overflow-hidden bg-[#0c0d14] border border-zinc-900 group shadow-lg cursor-pointer flex flex-col justify-between"
+                    style={{ boxShadow: `0 0 15px rgba(0,0,0,0.4)` }}
+                    onClick={() => setSelectedThumbnail(t)}
+                  >
                     
-                    {/* Glowing Grid Matrix Backdrop */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:15px_15px]" />
+                    {/* Dynamic High Contrast Mockup Canvas */}
+                    <div className="relative aspect-[16/9] w-full overflow-hidden flex items-center justify-center p-4">
+                      {/* Ambient Neon Lighting Ring */}
+                      <div 
+                        className={`absolute inset-0 bg-gradient-to-tr ${t.color} opacity-20 group-hover:opacity-40 transition-opacity duration-300`} 
+                      />
+                      
+                      {/* Glowing Grid Matrix Backdrop */}
+                      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:15px_15px]" />
 
-                    {/* Simulated 3D Element & Accent lines */}
-                    <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-950/90 border border-white/10 text-white font-mono text-[9px] font-black">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse" />
-                      <span>{t.badge}</span>
+                      {/* Simulated 3D Element & Accent lines */}
+                      <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-950/90 border border-white/10 text-white font-mono text-[9px] font-black">
+                        <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse" />
+                        <span>{t.badge}</span>
+                      </div>
+
+                      <div className="absolute bottom-4 right-4 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500 text-black font-sans font-black text-[10px] tracking-wide shadow-md">
+                        <TrendingUp className="w-3.5 h-3.5" />
+                        <span>{t.ctr} CTR</span>
+                      </div>
+
+                      {/* Play Video Indicator Overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/45 backdrop-blur-xs transition-opacity duration-300">
+                        <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                          <Maximize2 className="w-5 h-5" />
+                        </div>
+                      </div>
+
+                      {/* Bold High Contrast Copy Text Mockup */}
+                      <div className="relative text-left w-full space-y-1 z-10 select-none">
+                        <span className="block font-mono text-[8px] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-300 uppercase tracking-widest leading-none">
+                          PRO SERIES • {t.category}
+                        </span>
+                        <h5 className="font-sans text-sm md:text-base font-black text-white leading-tight uppercase tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] pr-4">
+                          {t.title}
+                        </h5>
+                      </div>
+
                     </div>
 
-                    <div className="absolute bottom-4 right-4 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500 text-black font-sans font-black text-[10px] tracking-wide shadow-md">
-                      <TrendingUp className="w-3.5 h-3.5" />
-                      <span>{t.ctr} CTR</span>
-                    </div>
-
-                    {/* Play Video Indicator Overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/45 backdrop-blur-xs transition-opacity duration-300">
-                      <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-300">
-                        <Maximize2 className="w-5 h-5" />
+                    {/* Metadata labels */}
+                    <div className="p-4 bg-zinc-950/90 border-t border-zinc-900 text-left flex items-center justify-between">
+                      <div>
+                        <span className="block text-[8px] font-mono text-zinc-500 uppercase tracking-widest font-bold">
+                          Mock Thumbnail ID
+                        </span>
+                        <span className="font-sans text-xs font-bold text-white">
+                          {t.id.toUpperCase()} • {t.category} Niche
+                        </span>
+                      </div>
+                      <div className="text-right">
+                        <span className="block text-[8px] font-mono text-zinc-500 uppercase tracking-widest font-bold">
+                          Views Driven
+                        </span>
+                        <span className="font-mono text-xs font-black text-[#10b981]">
+                          {t.views} Org
+                        </span>
                       </div>
                     </div>
 
-                    {/* Bold High Contrast Copy Text Mockup */}
-                    <div className="relative text-left w-full space-y-1 z-10 select-none">
-                      <span className="block font-mono text-[8px] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-300 uppercase tracking-widest leading-none">
-                        PRO SERIES • {t.category}
-                      </span>
-                      <h5 className="font-sans text-sm md:text-base font-black text-white leading-tight uppercase tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] pr-4">
-                        {t.title}
-                      </h5>
-                    </div>
-
-                  </div>
-
-                  {/* Metadata labels */}
-                  <div className="p-4 bg-zinc-950/90 border-t border-zinc-900 text-left flex items-center justify-between">
-                    <div>
-                      <span className="block text-[8px] font-mono text-zinc-500 uppercase tracking-widest font-bold">
-                        Mock Thumbnail ID
-                      </span>
-                      <span className="font-sans text-xs font-bold text-white">
-                        {t.id.toUpperCase()} • {t.category} Niche
-                      </span>
-                    </div>
-                    <div className="text-right">
-                      <span className="block text-[8px] font-mono text-zinc-500 uppercase tracking-widest font-bold">
-                        Views Driven
-                      </span>
-                      <span className="font-mono text-xs font-black text-[#10b981]">
-                        {t.views} Org
-                      </span>
-                    </div>
-                  </div>
-
-                </motion.div>
+                  </motion.div>
+                </Tilt>
               ))}
             </div>
           </div>

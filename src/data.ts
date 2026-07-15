@@ -108,7 +108,9 @@ export const PROJECTS: Project[] = [
     ],
     metrics: "3.5x Conversions",
     clientName: "CloudPulse Technologies",
-    tag: "Web Design & Speed"
+    tag: "Web Design & Speed",
+    technologies: ["React", "Vite", "Tailwind CSS", "Framer Motion", "Three.js"],
+    liveUrl: "https://ais-dev-cnpsou3sxnr5k7mwg3lryf-285257972198.asia-east1.run.app"
   },
   {
     id: "proj-2",
@@ -124,7 +126,9 @@ export const PROJECTS: Project[] = [
     ],
     metrics: "35K+ M-Clicks",
     clientName: "BloggerRank Hub",
-    tag: "SEO Growth"
+    tag: "SEO Growth",
+    technologies: ["WordPress", "RankMath SEO", "XML Sitemaps", "Google Analytics", "JSON-LD Schema"],
+    liveUrl: "https://aaryankelvin.online"
   },
   {
     id: "proj-3",
@@ -140,7 +144,9 @@ export const PROJECTS: Project[] = [
     ],
     metrics: "11.2% CTR Boost",
     clientName: "Apex Gaming & Tech",
-    tag: "Graphic Design"
+    tag: "Graphic Design",
+    technologies: ["Canva", "Photoshop CC", "3D Blender Models", "Click-Psychology mapping"],
+    liveUrl: "https://youtube.com"
   },
   {
     id: "proj-4",
@@ -156,14 +162,16 @@ export const PROJECTS: Project[] = [
     ],
     metrics: "140+ Leads Fast",
     clientName: "Siddharth J. (Consulting)",
-    tag: "Full funnels"
+    tag: "Full funnels",
+    technologies: ["React", "Blogger XML", "Tailwind CSS", "WhatsApp API integrations"],
+    liveUrl: "https://ais-dev-cnpsou3sxnr5k7mwg3lryf-285257972198.asia-east1.run.app"
   }
 ];
 
 export const PRICING_PACKAGES: PricingPackage[] = [
   {
     id: "pack-basic",
-    name: "Starter Launch",
+    name: "Starter Package",
     price: "$99",
     description: "Perfect for beginners, bloggers, and local businesses wanting to establish a high-quality modern visual presence.",
     features: [
@@ -181,7 +189,7 @@ export const PRICING_PACKAGES: PricingPackage[] = [
   },
   {
     id: "pack-std",
-    name: "Growth Engine",
+    name: "Professional Package",
     price: "$249",
     description: "The gold standard for freelancers, small brands, and content creators ready to drive serious organic growth and conversions.",
     features: [
@@ -201,7 +209,7 @@ export const PRICING_PACKAGES: PricingPackage[] = [
   },
   {
     id: "pack-prem",
-    name: "Nagar Brand Authority",
+    name: "Premium Package",
     price: "$499",
     description: "The ultimate solution for high-end professional agencies, brands, and creators wanting custom 3D web visuals and dominant marketing scales.",
     features: [
@@ -219,6 +227,27 @@ export const PRICING_PACKAGES: PricingPackage[] = [
     deliveryTime: "7-10 Days",
     revisions: "VIP Access / Lifetime Minor Edits",
     ctaText: "Order VIP Placement"
+  },
+  {
+    id: "pack-ent",
+    name: "Enterprise Package",
+    price: "$999",
+    description: "Tailored solution for fast-growing companies and high-volume creators needing custom AI system integrations, automation pipelines, and continuous support.",
+    features: [
+      "Fully Custom Web Application & System",
+      "Advanced AI Agent integrations & LLM endpoints",
+      "Automation pipelines and continuous workflows",
+      "Custom analytics & user behavioral dashboard tracking",
+      "Bi-weekly live video progress alignment reviews",
+      "Dedicated developer channel (2-hour SLA response)",
+      "Continuous retainer scaling with code handover",
+      "Fully documented backend REST/GraphQL endpoint mapping",
+      "Ongoing schema maintenance & server deployment oversight"
+    ],
+    badge: "Unlimited Scale",
+    deliveryTime: "14-21 Days",
+    revisions: "Bespoke / Multi-cycle Iterations",
+    ctaText: "Launch Enterprise Plan"
   }
 ];
 

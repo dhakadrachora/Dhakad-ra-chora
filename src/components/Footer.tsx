@@ -1,7 +1,9 @@
 import React from "react";
-import { Youtube, Twitter, Github, Instagram, Mail, ShieldCheck, Heart } from "lucide-react";
+import { useLanguage } from "./LanguageContext";
+import { Youtube, Twitter, Github, Instagram, Mail, ShieldCheck, Heart, MessageCircle } from "lucide-react";
 
 export default function Footer() {
+  const { language } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -23,7 +25,9 @@ export default function Footer() {
               </span>
             </div>
             <p className="font-sans text-[11px] text-zinc-500 max-w-sm">
-              Designing premium websites, optimizing Google SEO rankings, and constructing high-conversion assets. Making massive agency results accessible for beginner budgets.
+              {language === "en"
+                ? "Designing premium websites, optimizing Google SEO rankings, and constructing high-conversion assets. Making massive agency results accessible for beginner budgets."
+                : "प्रीमियम वेबसाइटों का निर्माण, गूगल एसईओ अनुकूलन, और उच्च-रूपांतरण डिजिटल एसेट्स का सृजन। शुरुआती बजट में बड़ी एजेंसियों जैसे शानदार परिणाम प्रदान करना।"}
             </p>
           </div>
 
@@ -76,26 +80,28 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-[11px] text-zinc-500">
           <div className="space-y-1">
             <div>
-              &copy; {currentYear} <strong>Rohit Kumar Nagar</strong>. All Rights Reserved.
+              &copy; {currentYear} <strong>Rohit Kumar Nagar</strong>. {language === "en" ? "All Rights Reserved." : "सर्वाधिकार सुरक्षित।"}
             </div>
             <div className="text-[10px] text-zinc-650 flex items-center justify-center sm:justify-start gap-1">
-              <span>Made with love for high-converting startups</span>
+              <span>{language === "en" ? "Made with love for high-converting startups" : "स्टार्टअप्स के लिए प्यार और प्रतिबद्धता के साथ निर्मित"}</span>
               <Heart className="w-3 h-3 text-pink-500 fill-pink-500" />
             </div>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-zinc-500">
             <a
-              href="mailto:rohitdhakaddhoti143@gmail.com"
-              className="hover:text-purple-400 transition-colors flex items-center gap-1 font-semibold"
+              href="https://wa.me/917424874912"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-emerald-400 text-emerald-500/90 transition-colors flex items-center gap-1.5 font-bold"
             >
-              <Mail className="w-3.5 h-3.5" />
-              <span>rohitdhakaddhoti143@gmail.com</span>
+              <MessageCircle className="w-4 h-4 animate-pulse" />
+              <span>WhatsApp: +91 7424874912</span>
             </a>
             <span className="hidden sm:inline text-zinc-800">|</span>
             <div className="flex items-center gap-1">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>SSL Secured Operations</span>
+              <span>{language === "en" ? "SSL Secured Operations" : "SSL सुरक्षित कार्यप्रणाली"}</span>
             </div>
           </div>
         </div>

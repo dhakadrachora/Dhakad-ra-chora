@@ -20,6 +20,8 @@ export interface Project {
   metrics: string;
   clientName: string;
   tag: string;
+  technologies: string[];
+  liveUrl: string;
 }
 
 export interface PricingPackage {

@@ -16,63 +16,185 @@ import {
   Award, 
   Languages,
   CheckCircle2,
-  Cpu
+  Cpu,
+  Smartphone,
+  Globe,
+  Settings,
+  Sparkles,
+  Layers,
+  BookOpen,
+  Laptop
 } from "lucide-react";
+import { useLanguage } from "./LanguageContext";
+// @ts-ignore
+import profilePic from "../assets/images/rohit_founder_1781870842914.jpg";
+
 export default function About() {
-  const skills = [
+  const { language, t } = useLanguage();
+
+  const skills = language === "en" ? [
     {
-      title: "Website Design",
-      subtitle: "Blogger / WordPress & Landing Pages",
-      icon: Monitor,
+      title: "YouTube Thumbnail Design",
+      subtitle: "High CTR CTR Magnets with 3D Pop",
+      icon: Youtube,
       progress: "98%",
-      color: "from-blue-500 to-cyan-400",
+      color: "from-red-500 to-orange-400",
+      accent: "rgba(239, 68, 68, 0.4)",
+      description: "Custom eye-catching thumbnails with advanced saturation matrices, high-contrast typography, and character outline glow effects engineered to drive instantaneous clicks."
+    },
+    {
+      title: "Reels Cover Design",
+      subtitle: "Viral Scroll-Stopping Covers",
+      icon: Smartphone,
+      progress: "95%",
+      color: "from-pink-500 to-rose-400",
+      accent: "rgba(244, 63, 94, 0.4)",
+      description: "Aesthetically pleasing vertical cover graphics engineered with safe-zone guides, premium fonts, and high-retention titles to match your brand's narrative."
+    },
+    {
+      title: "WordPress Development",
+      subtitle: "High-Speed Business Platforms",
+      icon: Globe,
+      progress: "97%",
+      color: "from-blue-500 to-indigo-500",
       accent: "rgba(59, 130, 246, 0.4)",
-      description: "Fast-loading templates custom-engineered for maximum user engagement. Specializing in high-fidelity glassmorphic designs, lightweight blogger setups, and seamless WordPress customization."
+      description: "Pixel-perfect multi-functional WordPress sites utilizing high-performance blocks, custom element builders, dynamic page structures, and secure plugins."
+    },
+    {
+      title: "Blogger Customization",
+      subtitle: "Premium Lightweight Layouts",
+      icon: Laptop,
+      progress: "96%",
+      color: "from-orange-500 to-amber-500",
+      accent: "rgba(245, 158, 11, 0.4)",
+      description: "Ultra-fast custom XML template coding, theme tuning, high-end layouts, AdSense ad placement mapping, and clean structural optimization for blogger templates."
     },
     {
       title: "SEO Optimization",
-      subtitle: "Google Ranking & Indexing Dominance",
+      subtitle: "Google Page 1 Ranking Domination",
       icon: Search,
-      progress: "95%",
-      color: "from-purple-500 to-pink-400",
-      accent: "rgba(168, 85, 247, 0.4)",
-      description: "Advanced semantic on-page schema layouts, key phrase cluster mapping, speed improvements, and XML indexing audits to skyrocket search visibility organically."
-    },
-    {
-      title: "YouTube Thumbnails & Growth",
-      subtitle: "High CTR Designs with 3D Pop",
-      icon: Youtube,
-      progress: "92%",
-      color: "from-red-500 to-orange-400",
-      accent: "rgba(239, 68, 68, 0.4)",
-      description: "Eye-catching visual designs using custom saturation matrices, high-contrast glow text, and character composites that drive instantaneous clicks."
-    },
-    {
-      title: "Blog & Content Writing",
-      subtitle: "AdSense-Friendly Copywriting",
-      icon: PenTool,
-      progress: "90%",
+      progress: "98%",
       color: "from-emerald-500 to-teal-400",
       accent: "rgba(16, 185, 129, 0.4)",
-      description: "Informative, engaging, and 100% human-crafted articles structured for high-intent search queries to clear AdSense approval checks easily."
+      description: "Implementing JSON-LD schemas, transactional keyword clusters, organic sitemap hierarchy, Core Web Vitals audit fixes, and lightning-fast loading."
     },
     {
-      title: "AI Training & Evaluation",
-      subtitle: "Data Annotation & Model Tuning",
-      icon: Cpu,
+      title: "AI Website Development",
+      subtitle: "Vercel-Grade Luxury Interfaces",
+      icon: Sparkles,
       progress: "96%",
-      color: "from-amber-500 to-yellow-400",
-      accent: "rgba(245, 158, 11, 0.4)",
-      description: "High-quality model responses tuning, reinforcement learning from human feedback (RLHF), precise prompt engineering, and semantic data annotation."
+      color: "from-purple-500 to-pink-400",
+      accent: "rgba(168, 85, 247, 0.4)",
+      description: "Deploying rapid modern glassmorphic web apps built in Vite, React, and Tailwind CSS. Implementing interactive floating states and responsive agency layouts."
     },
     {
-      title: "Digital Marketing & Branding",
-      subtitle: "Beginner-Friendly Business Scaling",
+      title: "Content Strategy",
+      subtitle: "AdSense-Friendly Writing Silos",
+      icon: BookOpen,
+      progress: "94%",
+      color: "from-cyan-500 to-blue-400",
+      accent: "rgba(6, 182, 212, 0.4)",
+      description: "Structuring high-value blog posts, topical maps, internal linking patterns, and semantic SEO frameworks designed for AdSense approval and real user value."
+    },
+    {
+      title: "Social Media Growth",
+      subtitle: "Viral Content Multipliers",
       icon: Megaphone,
-      progress: "88%",
+      progress: "93%",
+      color: "from-violet-500 to-fuchsia-400",
+      accent: "rgba(139, 92, 246, 0.4)",
+      description: "Comprehensive social assets, post copy templates, interactive carousels, and visual theme consistency to build real brand authority and audience loyalty."
+    },
+    {
+      title: "Automation Solutions",
+      subtitle: "Workflow Speed & Cost Efficiency",
+      icon: Layers,
+      progress: "92%",
+      color: "from-teal-500 to-emerald-400",
+      accent: "rgba(20, 184, 166, 0.4)",
+      description: "Connecting custom API integrations, automating content distribution schedules, and utilizing advanced ChatGPT/Claude prompts to reduce manual hours."
+    }
+  ] : [
+    {
+      title: "यूट्यूब थंबनेल डिज़ाइन",
+      subtitle: "3D पॉप वाले हाई CTR मैग्नेट्स",
+      icon: Youtube,
+      progress: "98%",
+      color: "from-red-500 to-orange-400",
+      accent: "rgba(239, 68, 68, 0.4)",
+      description: "कस्टम आकर्षक थंबनेल्स जो एडवांस सैचुरेशन मैट्रिसेस, हाई-कंट्रास्ट टाइपोग्राफी और करैक्टर आउटलाइन ग्लो इफेक्ट्स के साथ क्लिक्स बढ़ाने के लिए बनाए गए हैं।"
+    },
+    {
+      title: "रील्स कवर डिज़ाइन",
+      subtitle: "वायरल स्क्रॉल-स्टॉपिंग कवर्स",
+      icon: Smartphone,
+      progress: "95%",
       color: "from-pink-500 to-rose-400",
       accent: "rgba(244, 63, 94, 0.4)",
-      description: "Comprehensive branding funnels and high-conversion post assets created to position brand authority and get qualified prospects easily."
+      description: "ब्रांड की कहानी से मेल खाने वाले प्रीमियम फॉन्ट, सेफ-जोन गाइड्स और हाई-रिटेंशन टाइटल्स से सुसज्जित आकर्षक वर्टिकल रील्स कवर ग्राफिक्स।"
+    },
+    {
+      title: "वर्डप्रेस डेवलपमेंट",
+      subtitle: "हाई-स्पीड बिजनेस प्लेटफॉर्म्स",
+      icon: Globe,
+      progress: "97%",
+      color: "from-blue-500 to-indigo-500",
+      accent: "rgba(59, 130, 246, 0.4)",
+      description: "हाई-परफॉर्मेंस ब्लॉक्स, कस्टम एलिमेंट बिल्डर्स, डायनेमिक पेज स्ट्रक्चर्स और सुरक्षित प्लगइन्स का उपयोग करके बनाई गई वर्डप्रेस साइटें।"
+    },
+    {
+      title: "ब्लॉगर कस्टमाइज़ेशन",
+      subtitle: "प्रीमियम लाइटवेट लेआउट्स",
+      icon: Laptop,
+      progress: "96%",
+      color: "from-orange-500 to-amber-500",
+      accent: "rgba(245, 158, 11, 0.4)",
+      description: "ब्लॉगर टेम्पलेट्स के लिए अल्ट्रा-फास्ट कस्टम XML टेम्पलेट कोडिंग, थीम ट्यूनिंग, एडसेंस विज्ञापन प्लेसमेंट मैपिंग और क्लीन स्ट्रक्चरल ऑप्टिमाइजेशन।"
+    },
+    {
+      title: "एसईओ अनुकूलन (SEO)",
+      subtitle: "गूगल पेज 1 रैंकिंग प्रभुत्व",
+      icon: Search,
+      progress: "98%",
+      color: "from-emerald-500 to-teal-400",
+      accent: "rgba(16, 185, 129, 0.4)",
+      description: "गूगल क्रॉलर्स के लिए JSON-LD स्कीमा, ट्रांजैक्शनल कीवर्ड क्लस्टर्स, ऑर्गेनिक साइटमैप हायरार्की और कोर वेब वाइटल्स स्पीड ऑडिट।"
+    },
+    {
+      title: "एआई वेबसाइट डेवलपमेंट",
+      subtitle: "शानदार आधुनिक इंटरफेस",
+      icon: Sparkles,
+      progress: "96%",
+      color: "from-purple-500 to-pink-400",
+      accent: "rgba(168, 85, 247, 0.4)",
+      description: "Vite, React और Tailwind CSS का उपयोग करके बनाए गए ग्लासमोर्फिक वेब ऐप्स। स्मूथ फ्लोटिंग स्टेट्स और फुली रेस्पॉन्सिव आधुनिक फनल्स।"
+    },
+    {
+      title: "कंटेंट रणनीति (Content Strategy)",
+      subtitle: "एडसेंस-फ्रेंडली राइटिंग साइलोस",
+      icon: BookOpen,
+      progress: "94%",
+      color: "from-cyan-500 to-blue-400",
+      accent: "rgba(6, 182, 212, 0.4)",
+      description: "गूगल एडसेंस अप्रूवल और रियल यूजर वैल्यू के लिए हाई-वैल्यू ब्लॉग पोस्ट्स, टॉपिकल मैप्स और इंटरनल लिंकिंग पैटर्न्स की पूरी प्लानिंग।"
+    },
+    {
+      title: "सोशल मीडिया ग्रोथ",
+      subtitle: "वायरल कंटेंट मल्टीप्लायर्स",
+      icon: Megaphone,
+      progress: "93%",
+      color: "from-violet-500 to-fuchsia-400",
+      accent: "rgba(139, 92, 246, 0.4)",
+      description: "ब्रांड अथॉरिटी और सोशल प्रेजेंस स्थापित करने के लिए व्यापक सोशल मीडिया एसेट्स, वायरल पोस्ट कॉपी और आकर्षक कैरोसेल डिज़ाइन्स।"
+    },
+    {
+      title: "ऑटोमेशन समाधान",
+      subtitle: "समय और लागत की बचत",
+      icon: Layers,
+      progress: "92%",
+      color: "from-teal-500 to-emerald-400",
+      accent: "rgba(20, 184, 166, 0.4)",
+      description: "कस्टम एपीआई इंटीग्रेशन, ऑटोमेटेड कंटेंट डिस्ट्रीब्यूशन और उन्नत ChatGPT/Claude प्रॉम्प्ट्स का उपयोग करके मैनुअल काम को 90% तक कम करना।"
     }
   ];
 
@@ -92,18 +214,20 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 font-mono text-[10px] uppercase tracking-widest font-bold"
           >
-            <Zap className="w-3.5 h-3.5" /> Core Biography
+            <Zap className="w-3.5 h-3.5" /> {language === "en" ? "Core Biography" : "मुख्य परिचय"}
           </motion.div>
           
           <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-            The Digital Maverick Behind{" "}
+            {language === "en" ? "The Digital Maverick Behind" : "ग्रोथ के पीछे का"}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
-              Your Growth
+              {language === "en" ? "Your Growth" : "डिजिटल मास्टरमाइंड"}
             </span>
           </h2>
           
           <p className="font-sans text-zinc-400 text-sm sm:text-base">
-            Engineered with modern Apple and Vercel-inspired designs, I deliver pixel-perfect digital experiences, advanced search engine optimizations, and high-impact custom assets for brands.
+            {language === "en" 
+              ? "Engineered with modern Apple and Vercel-inspired designs, I deliver pixel-perfect digital experiences, advanced search engine optimizations, and high-impact custom assets for brands."
+              : "एप्पल और वर्सेल डिज़ाइनों से प्रेरित, मैं आपके ब्रांड के लिए पिक्सेल-परफेक्ट डिजिटल अनुभव, उन्नत सर्च इंजन ऑप्टिमाइजेशन और हाई-कन्वर्टिंग एसेट्स वितरित करता हूँ।"}
           </p>
         </div>
 
@@ -113,14 +237,19 @@ export default function About() {
           <div className="lg:col-span-4 space-y-6">
             <div className="p-6 rounded-2xl bg-zinc-950/60 border border-zinc-900/80 backdrop-blur-sm space-y-6">
               
-              {/* Profile Bio Headshot Monogram Badge */}
+              {/* Profile Bio Headshot Image Badge */}
               <div className="relative w-24 h-24 rounded-2xl overflow-hidden bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-600 p-[1.5px] shadow-[0_0_15px_rgba(147,51,234,0.3)]">
-                <div className="w-full h-full bg-zinc-900 flex items-center justify-center font-sans font-black text-white text-3xl tracking-tight uppercase rounded-[14px]">
-                  RKN
+                <div className="w-full h-full bg-zinc-900 overflow-hidden rounded-[14px]">
+                  <img 
+                    src={profilePic} 
+                    alt="Rohit Kumar Nagar" 
+                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2 pointer-events-none z-10">
                   <span className="text-[8px] font-bold text-[#10b981] flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 bg-[#10b981] rounded-full animate-pulse" /> Active
+                    <span className="w-1.5 h-1.5 bg-[#10b981] rounded-full animate-pulse" /> {language === "en" ? "Active" : "सक्रिय"}
                   </span>
                 </div>
               </div>
@@ -130,19 +259,23 @@ export default function About() {
                   Rohit Kumar Nagar
                 </h3>
                 <p className="font-mono text-xs text-purple-400 uppercase tracking-widest leading-none">
-                  AI Specialist & Growth Architect
+                  {language === "en" ? "AI Specialist & Growth Architect" : "एआई विशेषज्ञ और ग्रोथ आर्किटेक्ट"}
                 </p>
               </div>
 
               <p className="font-sans text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                As a high-speed digital growth architect, I deliver top-tier platforms that rank number one, drive high-CTR clicks, and optimize custom AI algorithms. Combining an analytical engineering mindset with high-conversion creative strategy, I provide remote-ready execution, problem-solving speed, and fast learning capabilities for clients worldwide.
+                {language === "en"
+                  ? "As a high-speed digital growth architect, I deliver top-tier platforms that rank number one, drive high-CTR clicks, and optimize custom AI algorithms. Combining an analytical engineering mindset with high-conversion creative strategy, I provide remote-ready execution, problem-solving speed, and fast learning capabilities for clients worldwide."
+                  : "एक हाई-स्पीड डिजिटल ग्रोथ आर्किटेक्ट के रूप में, मैं बेहतरीन वेबसाइट्स बनाता हूँ जो गूगल पर नंबर 1 रैंक करती हैं, थंबनेल्स बनाता हूँ जो हाई-CTR क्लिक लाते हैं, और कस्टम एआई एल्गोरिदम ऑप्टिमाइज़ करता हूँ। गंभीर तकनीकी दृष्टिकोण के साथ कलात्मक कौशल का संयोजन करके, मैं वर्ल्डवाइड क्लाइंट्स को सुपरफास्ट और उत्कृष्ट डेलिवरी प्रदान करता हूँ।"}
               </p>
 
               {/* Core Executive Highlights Badge Grid */}
               <div className="pt-2">
-                <span className="block text-[8px] font-mono text-zinc-500 uppercase tracking-widest font-black mb-2.5">Core Executive Profile Highlights</span>
+                <span className="block text-[8px] font-mono text-zinc-500 uppercase tracking-widest font-black mb-2.5">
+                  {language === "en" ? "Core Executive Profile Highlights" : "मुख्य प्रोफाइल हाइलाइट्स"}
+                </span>
                 <div className="flex flex-wrap gap-1.5">
-                  {[
+                  {(language === "en" ? [
                     "30+ Freelance Projects",
                     "Web Development",
                     "SEO",
@@ -153,7 +286,18 @@ export default function About() {
                     "Problem Solving",
                     "Remote Ready",
                     "Fast Learner"
-                  ].map((highlight, idx) => (
+                  ] : [
+                    "30+ फ्रीलांस प्रोजेक्ट्स",
+                    "वेब डेवलपमेंट",
+                    "गूगल एसईओ",
+                    "कंटेंट राइटिंग",
+                    "ग्राफिक डिज़ाइन",
+                    "एआई टूल्स",
+                    "वर्डप्रेस विशेषज्ञ",
+                    "प्रॉब्लम सॉल्विंग",
+                    "रिमोट रेडी",
+                    "फास्ट लर्नर"
+                  ]).map((highlight, idx) => (
                     <span 
                       key={idx} 
                       className="text-[9px] font-mono font-bold bg-blue-500/10 hover:bg-blue-500/15 text-blue-400 dark:text-blue-300 px-2.5 py-1 rounded-full border border-blue-500/20 shadow-sm transition-colors cursor-default"
@@ -171,8 +315,8 @@ export default function About() {
                     <Star className="w-4 h-4 fill-yellow-400" />
                   </div>
                   <div className="text-xs">
-                    <div className="font-bold text-white">5-Star Standards</div>
-                    <div className="text-zinc-500 text-[10px]">Client satisfaction focus</div>
+                    <div className="font-bold text-white">{language === "en" ? "5-Star Standards" : "5-स्टार गुणवत्ता"}</div>
+                    <div className="text-zinc-500 text-[10px]">{language === "en" ? "Client satisfaction focus" : "पूर्ण क्लाइंट संतुष्टि पर ध्यान"}</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -180,8 +324,8 @@ export default function About() {
                     <Clock className="w-4 h-4" />
                   </div>
                   <div className="text-xs">
-                    <div className="font-bold text-white">24-Hour Deliveries</div>
-                    <div className="text-zinc-500 text-[10px]">On thumbnails & design specs</div>
+                    <div className="font-bold text-white">{language === "en" ? "24-Hour Deliveries" : "24-घंटे एक्सप्रेस डेलिवरी"}</div>
+                    <div className="text-zinc-500 text-[10px]">{language === "en" ? "On thumbnails & design specs" : "थंबनेल्स और डिज़ाइन ड्राफ्ट्स पर"}</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -189,8 +333,8 @@ export default function About() {
                     <Users className="w-4 h-4" />
                   </div>
                   <div className="text-xs">
-                    <div className="font-bold text-white">100% Custom Work</div>
-                    <div className="text-zinc-500 text-[10px]">No lazy copy-paste templates</div>
+                    <div className="font-bold text-white">{language === "en" ? "100% Custom Work" : "100% मूल कार्य"}</div>
+                    <div className="text-zinc-500 text-[10px]">{language === "en" ? "No lazy copy-paste templates" : "कोई नकली कॉपी-पेस्ट काम नहीं"}</div>
                   </div>
                 </div>
               </div>
@@ -201,7 +345,7 @@ export default function About() {
           {/* Interactive Skills Cards Grid Column */}
           <div className="lg:col-span-8 space-y-4">
             <h3 className="font-sans text-xs font-black uppercase text-zinc-500 tracking-widest pl-2 mb-2">
-              Rohit's core skill expertise
+              {language === "en" ? "Rohit's core skill expertise" : "रोहित की मुख्य कौशल विशेषज्ञता"}
             </h3>
             
             <div className="space-y-4">
@@ -248,8 +392,8 @@ export default function About() {
                       {/* Right: Metric Badge Tracker */}
                       <div className="flex items-center gap-2">
                         <div className="text-right hidden sm:block">
-                          <div className="font-mono text-xs font-bold text-gray-300">Expertise Level</div>
-                          <div className="font-mono text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Perfected</div>
+                          <div className="font-mono text-xs font-bold text-gray-300">{language === "en" ? "Expertise Level" : "विशेषज्ञता स्तर"}</div>
+                          <div className="font-mono text-[10px] text-zinc-500 font-bold uppercase tracking-wider">{language === "en" ? "Perfected" : "सर्वोत्कृष्ट"}</div>
                         </div>
                         <div className={`px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 font-mono text-xs font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${skill.color}`}>
                           {skill.progress}
@@ -285,13 +429,15 @@ export default function About() {
           
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-3 relative z-10">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[#10b981] font-mono text-[10px] uppercase tracking-widest font-black">
-              <Award className="w-3.5 h-3.5" /> Verified Qualifications
+              <Award className="w-3.5 h-3.5" /> {language === "en" ? "Verified Qualifications" : "सत्यापित योग्यताएं"}
             </span>
             <h3 className="font-sans text-2xl sm:text-3xl font-black text-white tracking-tight">
-              Professional Resume & Education
+              {language === "en" ? "Professional Resume & Education" : "व्यावसायिक बायोडाटा और शिक्षा"}
             </h3>
             <p className="font-sans text-zinc-400 text-xs sm:text-sm">
-              An optimal blend of technical electronics discipline and digital marketing expertise.
+              {language === "en" 
+                ? "An optimal blend of technical electronics discipline and digital marketing expertise."
+                : "तकनीकी इलेक्ट्रॉनिक्स अनुशासन और डिजिटल मार्केटिंग विशेषज्ञता का एक अद्भुत मिश्रण।"}
             </p>
           </div>
 
@@ -301,7 +447,7 @@ export default function About() {
             <div className="space-y-6">
               <div className="flex items-center gap-2.5 pb-2 border-b border-zinc-900">
                 <Briefcase className="w-5 h-5 text-purple-400" />
-                <h4 className="font-sans font-black text-white text-lg">Freelance Milestones</h4>
+                <h4 className="font-sans font-black text-white text-lg">{language === "en" ? "Freelance Milestones" : "फ्रीलांस उपलब्धियां"}</h4>
                 <span className="ml-auto text-[10px] font-mono font-bold bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded border border-purple-500/20">
                   2024 - Present
                 </span>
@@ -314,9 +460,11 @@ export default function About() {
                     30+
                   </div>
                   <div className="space-y-1 text-left">
-                    <h5 className="font-sans font-bold text-white text-sm">Completed Freelance Projects</h5>
+                    <h5 className="font-sans font-bold text-white text-sm">{language === "en" ? "Completed Freelance Projects" : "पूरे किए गए फ्रीलांस प्रोजेक्ट्स"}</h5>
                     <p className="font-sans text-xs text-zinc-400 leading-relaxed">
-                      Executed a versatile portfolio of remote client contracts covering high-conversion landing page design, WordPress/Blogger optimization, and custom graphic layouts.
+                      {language === "en"
+                        ? "Executed a versatile portfolio of remote client contracts covering high-conversion landing page design, WordPress/Blogger optimization, and custom graphic layouts."
+                        : "हाई-कन्वर्शन लैंडिंग पेज डिज़ाइन, वर्डप्रेस/ब्लॉगर ऑप्टिमाइज़ेशन और कस्टम ग्राफ़िक लेआउट को कवर करने वाले रिमोट क्लाइंट कॉन्ट्रैक्ट्स का सफल निष्पादन।"}
                     </p>
                   </div>
                 </div>
@@ -328,10 +476,12 @@ export default function About() {
                   </div>
                   <div className="space-y-1 text-left">
                     <h5 className="font-sans font-bold text-white text-sm">
-                      Self-Run SEO Blog (<a href="https://aaryankelvin.online" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">aaryankelvin.online</a>)
+                      {language === "en" ? "Self-Run SEO Blog" : "खुद का गूगल एसईओ ब्लॉग"} (<a href="https://aaryankelvin.online" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">aaryankelvin.online</a>)
                     </h5>
                     <p className="font-sans text-xs text-zinc-400 leading-relaxed">
-                      Independently publish biography articles and Instagram optimization guides. Harnesses technical SEO silos to secure over 100+ organic visitors every single day.
+                      {language === "en"
+                        ? "Independently publish biography articles and Instagram optimization guides. Harnesses technical SEO silos to secure over 100+ organic visitors every single day."
+                        : "स्वतंत्र रूप से बायोग्राफी लेख और इंस्टाग्राम ऑप्टिमाइज़ेशन गाइड प्रकाशित करते हैं। तकनीकी एसईओ के माध्यम से हर दिन 100+ से अधिक ऑर्गेनिक विजिटर्स प्राप्त करते हैं।"}
                     </p>
                   </div>
                 </div>
@@ -342,9 +492,11 @@ export default function About() {
                     <Cpu className="w-4 h-4" />
                   </div>
                   <div className="space-y-1 text-left">
-                    <h5 className="font-sans font-bold text-white text-sm">AI-Assisted App Building & Prototyping</h5>
+                    <h5 className="font-sans font-bold text-white text-sm">{language === "en" ? "AI-Assisted App Building & Prototyping" : "एआई-असिस्टेड ऐप बिल्डिंग और प्रोटोटाइपिंग"}</h5>
                     <p className="font-sans text-xs text-zinc-400 leading-relaxed">
-                      Pioneered state-of-the-art prompt workflows using Claude and ChatGPT to plan, structure, and bootstrap interactive application interfaces for remote project contracts.
+                      {language === "en"
+                        ? "Pioneered state-of-the-art prompt workflows using Claude and ChatGPT to plan, structure, and bootstrap interactive application interfaces for remote project contracts."
+                        : "रिमोट प्रोजेक्ट कॉन्ट्रैक्ट्स के लिए इंटरैक्टिव एप्लिकेशन इंटरफेस की योजना बनाने, संरचना करने और बूटस्ट्रैप करने के लिए क्लॉड और चैटजीपीटी का उपयोग करके उन्नत प्रॉम्प्ट वर्कफ्लो का निर्माण।"}
                     </p>
                   </div>
                 </div>
@@ -355,9 +507,9 @@ export default function About() {
             <div className="space-y-6">
               <div className="flex items-center gap-2.5 pb-2 border-b border-zinc-900">
                 <GraduationCap className="w-5 h-5 text-emerald-400" />
-                <h4 className="font-sans font-black text-white text-lg">Academic History</h4>
+                <h4 className="font-sans font-black text-white text-lg">{language === "en" ? "Academic History" : "शैक्षणिक इतिहास"}</h4>
                 <span className="ml-auto text-[10px] font-mono font-bold bg-emerald-500/10 text-[#10b981] px-2 py-0.5 rounded border border-emerald-500/20">
-                  Verified Records
+                  {language === "en" ? "Verified Records" : "सत्यापित रिकॉर्ड"}
                 </span>
               </div>
 
@@ -367,14 +519,16 @@ export default function About() {
                   <div className="h-10 w-10 rounded-xl bg-zinc-950 border border-zinc-800 flex items-center justify-center shrink-0">
                     <Award className="w-5 h-5 text-amber-500" />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 w-full">
                     <div className="flex items-center justify-between gap-2">
-                      <h5 className="font-sans font-extrabold text-white text-sm">Bachelor of Arts (B.A.)</h5>
-                      <span className="font-mono text-[10px] text-zinc-500">Graduated</span>
+                      <h5 className="font-sans font-extrabold text-white text-sm">{language === "en" ? "Bachelor of Arts (B.A.)" : "कला स्नातक (बी.ए.)"}</h5>
+                      <span className="font-mono text-[10px] text-zinc-500">{language === "en" ? "Graduated" : "उत्तीर्ण"}</span>
                     </div>
-                    <p className="font-sans text-xs text-zinc-400">Kota, Rajasthan, India</p>
+                    <p className="font-sans text-xs text-zinc-400">{language === "en" ? "Kota, Rajasthan, India" : "कोटा, राजस्थान, भारत"}</p>
                     <p className="font-sans text-[11px] text-zinc-500 leading-normal">
-                      Developed advanced verbal, written, and cross-cultural communication skills in Hindi & English, laying a deep foundation for high-converting blog copywriting.
+                      {language === "en"
+                        ? "Developed advanced verbal, written, and cross-cultural communication skills in Hindi & English, laying a deep foundation for high-converting blog copywriting."
+                        : "हिंदी और अंग्रेजी में उन्नत मौखिक, लिखित और क्रॉस-सांस्कृतिक संचार कौशल विकसित किए, जिससे हाई-कन्वर्टिंग ब्लॉग कॉपीराइटिंग की मजबूत नींव रखी गई।"}
                     </p>
                   </div>
                 </div>
@@ -384,14 +538,16 @@ export default function About() {
                   <div className="h-10 w-10 rounded-xl bg-zinc-950 border border-zinc-800 flex items-center justify-center shrink-0">
                     <Cpu className="w-5 h-5 text-blue-400" />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 w-full">
                     <div className="flex items-center justify-between gap-2">
-                      <h5 className="font-sans font-extrabold text-white text-sm">ITI — Electronics Mechanic</h5>
-                      <span className="font-mono text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded">Pass Out: 2024</span>
+                      <h5 className="font-sans font-extrabold text-white text-sm">{language === "en" ? "ITI — Electronics Mechanic" : "आईटीआई — इलेक्ट्रॉनिक्स मैकेनिक"}</h5>
+                      <span className="font-mono text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded">{language === "en" ? "Pass Out: 2024" : "उत्तीर्ण: 2024"}</span>
                     </div>
-                    <p className="font-sans text-xs text-zinc-400">Government ITI, Sangod, Rajasthan, India</p>
+                    <p className="font-sans text-xs text-zinc-400">{language === "en" ? "Government ITI, Sangod, Rajasthan, India" : "राजकीय औद्योगिक प्रशिक्षण संस्थान (आईटीआई), सांगोद, राजस्थान, भारत"}</p>
                     <p className="font-sans text-[11px] text-zinc-500 leading-normal">
-                      Mastered electronics repair, troubleshooting circuit schematics, multimeter testing, precision soldering/desoldering, and hardware debugging.
+                      {language === "en"
+                        ? "Mastered electronics repair, troubleshooting circuit schematics, multimeter testing, precision soldering/desoldering, and hardware debugging."
+                        : "इलेक्ट्रॉनिक्स मरम्मत, सर्किट योजनाबद्ध समस्या निवारण, मल्टीमीटर परीक्षण, सटीक सोल्डरिंग/डीसोल्डरिंग और हार्डवेयर डिबगिंग में महारत हासिल की।"}
                     </p>
                   </div>
                 </div>
@@ -401,12 +557,12 @@ export default function About() {
                   <div className="h-10 w-10 rounded-xl bg-zinc-950 border border-zinc-800 flex items-center justify-center shrink-0">
                     <CheckCircle2 className="w-5 h-5 text-purple-400" />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 w-full">
                     <div className="flex items-center justify-between gap-2">
-                      <h5 className="font-sans font-extrabold text-white text-sm">Senior Secondary (12th RBSE)</h5>
-                      <span className="font-mono text-[10px] text-zinc-500">Pass Out: 2022</span>
+                      <h5 className="font-sans font-extrabold text-white text-sm">{language === "en" ? "Senior Secondary (12th RBSE)" : "उच्च माध्यमिक (12वीं आरबीएसई)"}</h5>
+                      <span className="font-mono text-[10px] text-zinc-500">{language === "en" ? "Pass Out: 2022" : "उत्तीर्ण: 2022"}</span>
                     </div>
-                    <p className="font-sans text-xs text-zinc-400">Govt. Sr. Sec. School, Dhoti, Kota – 61.00% (First Division)</p>
+                    <p className="font-sans text-xs text-zinc-400">{language === "en" ? "Govt. Sr. Sec. School, Dhoti, Kota – 61.00% (First Division)" : "राजकीय उच्च माध्यमिक विद्यालय, धोती, कोटा – 61.00% (प्रथम श्रेणी)"}</p>
                   </div>
                 </div>
               </div>
@@ -418,22 +574,32 @@ export default function About() {
           <div className="mt-8 p-6 rounded-2xl bg-zinc-950/60 border border-zinc-900 relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-left">
             <div className="space-y-1">
               <span className="font-mono text-[9px] font-bold text-zinc-500 uppercase tracking-widest block">
-                Additional Personal Specifications
+                {language === "en" ? "Additional Personal Specifications" : "अतिरिक्त व्यक्तिगत विशिष्टताएँ"}
               </span>
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-zinc-300">
                 <div className="flex items-center gap-1">
                   <MapPin className="w-3.5 h-3.5 text-rose-500" />
-                  <span>Dhoti, Kota, Rajasthan, India</span>
+                  <span>{language === "en" ? "Dhoti, Kota, Rajasthan, India" : "धोती, कोटा, राजस्थान, भारत"}</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Languages className="w-3.5 h-3.5 text-blue-400" />
-                  <span>Hindi (Native) | English (Professional)</span>
+                  <span>{language === "en" ? "Hindi (Native) | English (Professional)" : "हिंदी (मातृभाषा) | अंग्रेजी (व्यावसायिक)"}</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {["Honest & Responsible", "Hardworking & Dedicated", "Independent remote worker", "Adaptive Learner"].map((tag, i) => (
+              {(language === "en" ? [
+                "Honest & Responsible", 
+                "Hardworking & Dedicated", 
+                "Independent remote worker", 
+                "Adaptive Learner"
+              ] : [
+                "ईमानदार और जिम्मेदार",
+                "मेहनती और समर्पित",
+                "स्वतंत्र रिमोट वर्कर",
+                "अनुकूलनशील शिक्षार्थी"
+              ]).map((tag, i) => (
                 <span key={i} className="text-[10px] font-semibold bg-white/5 text-zinc-400 px-3 py-1 rounded-lg border border-white/5">
                   ✓ {tag}
                 </span>

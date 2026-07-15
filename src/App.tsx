@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import TechnicalSkills from "./components/TechnicalSkills";
 import AiSeoDivision from "./components/AiSeoDivision";
+import PremiumWorkflow from "./components/PremiumWorkflow";
 import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
 import AestheticShowcase from "./components/AestheticShowcase";
@@ -20,10 +21,22 @@ export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [currency, setCurrency] = useState<"USD" | "INR">("USD");
   const [activeSection, setActiveSection] = useState("hero");
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   // State to hold prefilled selections for the Contact Form
   const [selectedPlan, setSelectedPlan] = useState("");
   const [selectedService, setSelectedService] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScroll > 0) {
+        setScrollProgress(window.scrollY / totalScroll);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -57,6 +70,14 @@ export default function App() {
       isDarkMode ? "bg-[#060608] text-white" : "bg-[#f4f4f7] text-zinc-900"
     }`}>
       
+      {/* Luxury Cinematic Top Scroll Progress Bar */}
+      <div className="fixed top-0 left-0 right-0 h-[3px] bg-black/10 z-[9999] pointer-events-none">
+        <div 
+          className="h-full bg-gradient-to-r from-blue-500 via-indigo-400 via-purple-500 to-pink-500 transition-all duration-75 ease-out shadow-[0_0_8px_rgba(139,92,246,0.6)]"
+          style={{ width: `${scrollProgress * 100}%` }}
+        />
+      </div>
+
       {/* Cinematic 3D Spinner Intro Preloader */}
       <Loader3D />
 
@@ -94,6 +115,9 @@ export default function App() {
 
         {/* 3.5 AI & SEO Specialized Divisions */}
         <AiSeoDivision />
+
+        {/* Premium Project Lifecycle Workflow */}
+        <PremiumWorkflow />
 
         {/* 4. Portfolio Before-After Case Section */}
         <Portfolio />
