@@ -902,26 +902,21 @@ export const TRANSLATED_WORKFLOW: Record<Language, any[]> = {
 };
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>(() => {
-    const saved = localStorage.getItem("portfolio_lang");
-    return (saved === "en" || saved === "hi") ? saved : "en";
-  });
+  const language: Language = "en";
 
   const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
-    localStorage.setItem("portfolio_lang", lang);
-    // Smoothly update body lang attribute
-    document.documentElement.setAttribute("lang", lang);
+    // No-op to remove Hindi language selection safely
+    document.documentElement.setAttribute("lang", "en");
   };
 
   useEffect(() => {
-    document.documentElement.setAttribute("lang", language);
-  }, [language]);
+    document.documentElement.setAttribute("lang", "en");
+  }, []);
 
   const t = (key: string): string => {
     const translation = DICTIONARY[key];
     if (!translation) return key;
-    return translation[language] || translation["en"] || key;
+    return translation["en"] || key;
   };
 
   return (

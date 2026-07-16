@@ -79,84 +79,8 @@ const PROJECTS_EN = [
   }
 ];
 
-const PROJECTS_HI = [
-  {
-    id: "proj-1",
-    title: "सास (SaaS) टेक लैंडिंग पेज नया डिज़ाइन",
-    category: "वेब डिजाइन",
-    description: "एक पुराने, धीमे एचटीएमएल (HTML) वेबसाइट को शानदार चमकते हुए सूक्ष्म-इंटरैक्शन के साथ उच्च-गति वाले साइबर-स्टाइल लैंडिंग पेज में अपग्रेड किया।",
-    beforeImg: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80",
-    afterImg: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-    results: [
-      "मूल रूपांतरण दर (Conversion Rate) 3.5 गुना बढ़ गई (1.8% से बढ़कर 6.3%)",
-      "पेज लोड समय 4.8 सेकंड से घटकर मात्र 0.7 सेकंड हो गया (LCP स्कोर A)",
-      "इंटरैक्टिव 3D-कार्ड तत्वों ने वेबसाइट पर यूजर के स्क्रॉल टाइम को 40% तक बढ़ाया"
-    ],
-    metrics: "3.5 गुना अधिक कन्वर्शन",
-    clientName: "क्लाउडपल्स टेक्नोलॉजीज",
-    tag: "वेब डिजाइन और स्पीड",
-    technologies: ["React", "Vite", "Tailwind CSS", "Framer Motion", "Three.js"],
-    liveUrl: "https://ais-dev-cnpsou3sxnr5k7mwg3lryf-285257972198.asia-east1.run.app"
-  },
-  {
-    id: "proj-2",
-    title: "आर्गेनिक ब्लॉग को प्रति माह 35,000 क्लिक तक पहुँचाया",
-    category: "एसईओ अनुकूलन",
-    description: "तकनीकी क्षेत्र में एक नए ब्लॉगिंग डोमेन के लिए कीवर्ड आर्किटेक्चर और कंटेंट प्लानिंग की, और स्थानीय एसईओ स्कीमा संरचनाओं को लागू किया।",
-    beforeImg: "https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=600&q=80",
-    afterImg: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    results: [
-      "गूगल के टॉप 3 परिणामों में 18 महत्वपूर्ण कीवर्ड की पेज रैंकिंग हासिल की",
-      "ऑर्गेनिक क्लिक्स प्रति माह 50 से आसमान छूकर 35,400 प्रति माह पहुँच गए",
-      "कंटेंट पब्लिश करने के केवल 14 दिनों के भीतर गूगल एडसेंस (AdSense) स्वीकृति प्राप्त की"
-    ],
-    metrics: "35K+ मासिक क्लिक्स",
-    clientName: "ब्लॉगररैंक हब",
-    tag: "एसईओ ग्रोथ",
-    technologies: ["WordPress", "RankMath SEO", "XML Sitemaps", "Google Analytics", "JSON-LD Schema"],
-    liveUrl: "https://aaryankelvin.online"
-  },
-  {
-    id: "proj-3",
-    title: "टेक यूट्यूबर थंबनेल और सीटीआर (CTR) वृद्धि",
-    category: "थंबनेल डिज़ाइन",
-    description: "अधिक क्लिक प्राप्त करने के उद्देश्य से नियोन लाइटिंग और 3D मॉडल रेंडरिंग के साथ उच्च प्रभाव वाले, कस्टम-शेडो थंबनेल तैयार किए।",
-    beforeImg: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80",
-    afterImg: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80",
-    results: [
-      "औसत क्लिक-थ्रू दर (CTR) 2.4% से बढ़कर 11.2% हो गई",
-      "प्रति एपिसोड औसत व्यूज 30 दिनों के भीतर 420,000 बढ़ गए",
-      "मोबाइल फीड पर विशिष्ट रूप से पहचानी जाने वाली कस्टम ब्रांडिंग विकसित की"
-    ],
-    metrics: "11.2% सीटीआर बूस्ट",
-    clientName: "एपेक्स गेमिंग एंड टेक",
-    tag: "ग्राफिक डिजाइन",
-    technologies: ["Canva", "Photoshop CC", "3D Blender Models", "Click-Psychology mapping"],
-    liveUrl: "https://youtube.com"
-  },
-  {
-    id: "proj-4",
-    title: "डायरेक्ट फॉर्म के साथ आधुनिक पेशेवर पोर्टफोलियो",
-    category: "डिजिटल मार्केटिंग",
-    description: "एक स्वतंत्र पेशेवर के लिए ग्लासमोर्फिक टेबल और सोशल ट्रस्ट बोर्ड का उपयोग करके एक प्रीमियम सिंगल-पेज विजुअल हब का निर्माण किया।",
-    beforeImg: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80",
-    afterImg: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
-    results: [
-      "पहले दो हफ्तों के भीतर 140+ अत्यधिक योग्य पूछताछ (Inquiries) आकर्षित कीं",
-      "कन्वर्शन-अनुकूलित जानकारी प्राप्त करने के लिए कस्टम ब्रीफ-कैप्चर सिस्टम एकीकृत किया",
-      "मानक विपणन चैनलों की तुलना में प्रति-लीड-लागत (CPL) को 56% तक कम किया"
-    ],
-    metrics: "140+ तेजी से लीड्स",
-    clientName: "सिद्धार्थ जे. (कंसल्टिंग)",
-    tag: "फुल फनल",
-    technologies: ["React", "Blogger XML", "Tailwind CSS", "WhatsApp API integrations"],
-    liveUrl: "https://ais-dev-cnpsou3sxnr5k7mwg3lryf-285257972198.asia-east1.run.app"
-  }
-];
-
 export default function Portfolio() {
-  const { language } = useLanguage();
-  const projects = language === "en" ? PROJECTS_EN : PROJECTS_HI;
+  const projects = PROJECTS_EN;
   const [activeProject, setActiveProject] = useState(projects[0].id);
 
   // Track the before/after slider splits for each project ID dynamically
@@ -201,20 +125,18 @@ export default function Portfolio() {
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-mono text-[10px] uppercase tracking-widest font-bold">
-            <TrendingUp className="w-3.5 h-3.5" /> {language === "en" ? "High-Conversion Proof" : "उच्च रूपांतरण प्रमाण"}
+            <TrendingUp className="w-3.5 h-3.5" /> High-Conversion Proof
           </div>
           
           <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-            {language === "en" ? "Case Studies &" : "केस स्टडीज और"}{" "}
+            Case Studies &{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-300 to-blue-400">
-              {language === "en" ? "Transformations" : "असाधारण बदलाव"}
+              Transformations
             </span>
           </h2>
           
           <p className="font-sans text-zinc-400 text-sm sm:text-base">
-            {language === "en"
-              ? "Don't take my word for it. Slide through real-world \"Before / After\" client overhauls and see the actual Google rank & CTR transformations first-hand."
-              : "मेरी बातों पर विश्वास न करें। हमारे क्लाइंट्स के प्रोजेक्ट्स के वास्तविक 'पहले / बाद' के बदलावों को स्लाइड करके देखें और उनकी सर्च रैंकिंग में सुधार देखें।"}
+            Don't take my word for it. Slide through real-world "Before / After" client overhauls and see the actual Google rank & CTR transformations first-hand.
           </p>
         </div>
 
@@ -267,14 +189,14 @@ export default function Portfolio() {
                               {project.category}
                             </span>
                             <h3 className="text-xl sm:text-2xl font-black text-white leading-none">
-                              {language === "en" ? "Interactive Visual Sweep" : "इंटरैक्टिव विजुअल स्लाइडर"}
+                              Interactive Visual Sweep
                             </h3>
                           </div>
                           
                           {/* Explaining instruction */}
                           <span className="flex items-center gap-1 text-[10px] font-mono text-zinc-400 bg-zinc-900 px-2.5 py-1 rounded">
                             <ArrowRightLeft className="w-3.5 h-3.5 animate-pulse text-emerald-400" />
-                            {language === "en" ? "Move mouse over image" : "इमेज पर माउस चलाएं"}
+                            Move mouse/finger over image
                           </span>
                         </div>
 
@@ -299,7 +221,7 @@ export default function Portfolio() {
                             }}
                           />
                           <div className="absolute top-4 right-4 bg-emerald-600 text-white font-sans text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded">
-                            {language === "en" ? "After Upgrade" : "बदलाव के बाद"}
+                            After Upgrade
                           </div>
 
                           {/* Before Image (Slices width based on sliderPos) */}
@@ -318,7 +240,7 @@ export default function Portfolio() {
                               }}
                             />
                             <div className="absolute top-4 left-4 bg-rose-700 text-white font-sans text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded">
-                              {language === "en" ? "Before" : "पहले"}
+                              Before
                             </div>
                           </div>
 
@@ -337,10 +259,8 @@ export default function Portfolio() {
                           <Sparkles className="w-4 h-4" />
                         </div>
                         <span className="font-sans text-xs text-zinc-400 text-left">
-                          <strong>{language === "en" ? "Rohit's Standard:" : "रोहित का मानक:"}</strong>{" "}
-                          {language === "en"
-                            ? "We eliminate visual bloat, optimize image loads, integrate custom scripts, and inject high contrast callouts."
-                            : "हम वेबसाइट से फालतू और भारी कोड हटाते हैं, इमेज लोडिंग की गति बढ़ाते हैं और उच्च कंट्रास्ट डिज़ाइन का उपयोग करते हैं।"}
+                          <strong>Rohit's Standard:</strong>{" "}
+                          We eliminate visual bloat, optimize image loads, integrate custom scripts, and inject high contrast callouts.
                         </span>
                       </div>
                     </div>
@@ -356,13 +276,13 @@ export default function Portfolio() {
                       <div className="space-y-6">
                         <div>
                           <span className="font-mono text-[9px] font-bold text-zinc-500 uppercase tracking-widest block">
-                            {language === "en" ? "Project Sponsor" : "प्रोजेक्ट स्पॉन्सर"}
+                            Project Sponsor
                           </span>
                           <h4 className="font-sans font-black text-2xl text-white">
                             {project.clientName}
                           </h4>
                           <div className="mt-2.5 inline-block px-2.5 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 font-mono text-[9px] uppercase tracking-wider text-emerald-400 font-bold">
-                            {language === "en" ? "Case Study Active" : "केस स्टडी सक्रिय"}
+                            Case Study Active
                           </div>
                           <p className="font-sans text-xs sm:text-sm text-zinc-400 mt-2.5 leading-relaxed">
                             {project.description}
@@ -374,7 +294,7 @@ export default function Portfolio() {
                         {/* Key Results list */}
                         <div className="space-y-3.5">
                           <span className="block font-mono text-[10px] text-zinc-500 font-bold uppercase tracking-wider">
-                            {language === "en" ? "Results Achieved" : "प्राप्त हुए परिणाम"}
+                            Results Achieved
                           </span>
                           
                           <div className="space-y-3">
@@ -394,7 +314,7 @@ export default function Portfolio() {
                         {/* Technologies Used */}
                         <div className="space-y-2.5">
                           <span className="block font-mono text-[10px] text-zinc-500 font-bold uppercase tracking-wider">
-                            {language === "en" ? "Technologies & Expertises Used" : "उपयोग की गई तकनीकें"}
+                            Technologies & Expertises Used
                           </span>
                           <div className="flex flex-wrap gap-1.5">
                             {project.technologies.map((tech) => (
@@ -414,10 +334,10 @@ export default function Portfolio() {
                         <div className="p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/10 flex items-center justify-between">
                           <div>
                             <span className="block text-[8px] font-mono text-zinc-500 uppercase font-black">
-                              {language === "en" ? "Validated Output" : "सत्यापित परिणाम"}
+                              Validated Output
                             </span>
                             <span className="block text-xs font-black text-white uppercase tracking-wider">
-                              {language === "en" ? "Growth Metrics" : "ग्रोथ मैट्रिक्स"}
+                              Growth Metrics
                             </span>
                           </div>
                           
@@ -432,7 +352,7 @@ export default function Portfolio() {
                           rel="noopener noreferrer"
                           className="w-full py-3.5 px-4 rounded-xl font-sans text-xs font-black tracking-widest uppercase text-center text-zinc-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.35)] transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
                         >
-                          <span>{language === "en" ? "Launch Live Preview" : "लाइव प्रिव्यू देखें"}</span>
+                          <span>Launch Live Preview</span>
                           <ExternalLink className="w-3.5 h-3.5" />
                         </a>
                       </div>

@@ -25,9 +25,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="font-sans text-[11px] text-zinc-500 max-w-sm">
-              {language === "en"
-                ? "Designing premium websites, optimizing Google SEO rankings, and constructing high-conversion assets. Making massive agency results accessible for beginner budgets."
-                : "प्रीमियम वेबसाइटों का निर्माण, गूगल एसईओ अनुकूलन, और उच्च-रूपांतरण डिजिटल एसेट्स का सृजन। शुरुआती बजट में बड़ी एजेंसियों जैसे शानदार परिणाम प्रदान करना।"}
+              Designing premium websites, optimizing Google SEO rankings, and constructing high-conversion assets. Making massive agency results accessible for beginner budgets.
             </p>
           </div>
 
@@ -80,10 +78,10 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-[11px] text-zinc-500">
           <div className="space-y-1">
             <div>
-              &copy; {currentYear} <strong>Rohit Kumar Nagar</strong>. {language === "en" ? "All Rights Reserved." : "सर्वाधिकार सुरक्षित।"}
+              &copy; {currentYear} <strong>Rohit Kumar Nagar</strong>. All Rights Reserved.
             </div>
             <div className="text-[10px] text-zinc-650 flex items-center justify-center sm:justify-start gap-1">
-              <span>{language === "en" ? "Made with love for high-converting startups" : "स्टार्टअप्स के लिए प्यार और प्रतिबद्धता के साथ निर्मित"}</span>
+              <span>Made with love for high-converting startups</span>
               <Heart className="w-3 h-3 text-pink-500 fill-pink-500" />
             </div>
           </div>
@@ -101,7 +99,7 @@ export default function Footer() {
             <span className="hidden sm:inline text-zinc-800">|</span>
             <div className="flex items-center gap-1">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>{language === "en" ? "SSL Secured Operations" : "SSL सुरक्षित कार्यप्रणाली"}</span>
+              <span>SSL Secured Operations</span>
             </div>
           </div>
         </div>

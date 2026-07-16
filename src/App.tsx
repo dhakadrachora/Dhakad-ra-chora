@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "motion/react";
 import Loader3D from "./components/Loader3D";
 import Background3D from "./components/Background3D";
 import Navbar from "./components/Navbar";
@@ -65,6 +66,16 @@ export default function App() {
     setSelectedService(service);
   };
 
+  // Subtle fadeInUp settings for premium scroll choreography
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.7, ease: "easeOut" } 
+    }
+  };
+
   return (
     <div className={`relative min-h-screen selection:bg-purple-600 selection:text-white font-sans antialiased overflow-hidden transition-colors duration-300 ${
       isDarkMode ? "bg-[#060608] text-white" : "bg-[#f4f4f7] text-zinc-900"
@@ -95,62 +106,153 @@ export default function App() {
       />
 
       {/* Full-Screen Content Layout Section Columns */}
-      <main className="relative z-10 w-full">
+      <main className="relative z-10 w-full space-y-12 sm:space-y-20">
         
         {/* 1. Hero Section */}
-        <Hero scrollToSection={scrollToSection} />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeInUpVariants}
+        >
+          <Hero scrollToSection={scrollToSection} />
+        </motion.div>
 
         {/* 2. Biography About Section */}
-        <About />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeInUpVariants}
+        >
+          <About />
+        </motion.div>
 
         {/* 2.5 Technical Skills Section */}
-        <TechnicalSkills />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeInUpVariants}
+        >
+          <TechnicalSkills />
+        </motion.div>
 
         {/* 3. High Fidelity Services Section */}
-        <Services
-          currency={currency}
-          setSelectedService={handleSetSelectedService}
-          scrollToSection={scrollToSection}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeInUpVariants}
+        >
+          <Services
+            currency={currency}
+            setSelectedService={handleSetSelectedService}
+            scrollToSection={scrollToSection}
+          />
+        </motion.div>
 
         {/* 3.5 AI & SEO Specialized Divisions */}
-        <AiSeoDivision />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeInUpVariants}
+        >
+          <AiSeoDivision />
+        </motion.div>
 
         {/* Premium Project Lifecycle Workflow */}
-        <PremiumWorkflow />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeInUpVariants}
+        >
+          <PremiumWorkflow />
+        </motion.div>
 
         {/* 4. Portfolio Before-After Case Section */}
-        <Portfolio />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeInUpVariants}
+        >
+          <Portfolio />
+        </motion.div>
 
         {/* 10 bespoke projects, 20 thumbnails & Vector Graphics */}
-        <AestheticShowcase isDarkMode={isDarkMode} />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeInUpVariants}
+        >
+          <AestheticShowcase isDarkMode={isDarkMode} />
+        </motion.div>
 
         {/* Real Verified Proof & Audit Dashboards */}
-        <VerifiedProofHub />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeInUpVariants}
+        >
+          <VerifiedProofHub />
+        </motion.div>
 
         {/* Real Live Demo Playground Zone */}
-        <InteractivePlayground
-          setSelectedService={handleSetSelectedService}
-          setSelectedPlan={handleSetSelectedPlan}
-          scrollToSection={scrollToSection}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeInUpVariants}
+        >
+          <InteractivePlayground
+            setSelectedService={handleSetSelectedService}
+            setSelectedPlan={handleSetSelectedPlan}
+            scrollToSection={scrollToSection}
+          />
+        </motion.div>
 
         {/* 5. Pricing Cards Section */}
-        <Pricing
-          currency={currency}
-          setCurrency={setCurrency}
-          setSelectedPlan={handleSetSelectedPlan}
-          scrollToSection={scrollToSection}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeInUpVariants}
+        >
+          <Pricing
+            currency={currency}
+            setCurrency={setCurrency}
+            setSelectedPlan={handleSetSelectedPlan}
+            scrollToSection={scrollToSection}
+          />
+        </motion.div>
 
         {/* 6. Client Feedback Star Testimonial Section */}
-        <Testimonials />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeInUpVariants}
+        >
+          <Testimonials />
+        </motion.div>
 
         {/* 7. Action Contact Intake Portal */}
-        <Contact
-          selectedPlan={selectedPlan}
-          selectedService={selectedService}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeInUpVariants}
+        >
+          <Contact
+            selectedPlan={selectedPlan}
+            selectedService={selectedService}
+          />
+        </motion.div>
 
       </main>
 

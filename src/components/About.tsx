@@ -32,7 +32,7 @@ import profilePic from "../assets/images/rohit_founder_1781870842914.jpg";
 export default function About() {
   const { language, t } = useLanguage();
 
-  const skills = language === "en" ? [
+  const skills = [
     {
       title: "YouTube Thumbnail Design",
       subtitle: "High CTR CTR Magnets with 3D Pop",
@@ -113,88 +113,6 @@ export default function About() {
       color: "from-teal-500 to-emerald-400",
       accent: "rgba(20, 184, 166, 0.4)",
       description: "Connecting custom API integrations, automating content distribution schedules, and utilizing advanced ChatGPT/Claude prompts to reduce manual hours."
-    }
-  ] : [
-    {
-      title: "यूट्यूब थंबनेल डिज़ाइन",
-      subtitle: "3D पॉप वाले हाई CTR मैग्नेट्स",
-      icon: Youtube,
-      progress: "98%",
-      color: "from-red-500 to-orange-400",
-      accent: "rgba(239, 68, 68, 0.4)",
-      description: "कस्टम आकर्षक थंबनेल्स जो एडवांस सैचुरेशन मैट्रिसेस, हाई-कंट्रास्ट टाइपोग्राफी और करैक्टर आउटलाइन ग्लो इफेक्ट्स के साथ क्लिक्स बढ़ाने के लिए बनाए गए हैं।"
-    },
-    {
-      title: "रील्स कवर डिज़ाइन",
-      subtitle: "वायरल स्क्रॉल-स्टॉपिंग कवर्स",
-      icon: Smartphone,
-      progress: "95%",
-      color: "from-pink-500 to-rose-400",
-      accent: "rgba(244, 63, 94, 0.4)",
-      description: "ब्रांड की कहानी से मेल खाने वाले प्रीमियम फॉन्ट, सेफ-जोन गाइड्स और हाई-रिटेंशन टाइटल्स से सुसज्जित आकर्षक वर्टिकल रील्स कवर ग्राफिक्स।"
-    },
-    {
-      title: "वर्डप्रेस डेवलपमेंट",
-      subtitle: "हाई-स्पीड बिजनेस प्लेटफॉर्म्स",
-      icon: Globe,
-      progress: "97%",
-      color: "from-blue-500 to-indigo-500",
-      accent: "rgba(59, 130, 246, 0.4)",
-      description: "हाई-परफॉर्मेंस ब्लॉक्स, कस्टम एलिमेंट बिल्डर्स, डायनेमिक पेज स्ट्रक्चर्स और सुरक्षित प्लगइन्स का उपयोग करके बनाई गई वर्डप्रेस साइटें।"
-    },
-    {
-      title: "ब्लॉगर कस्टमाइज़ेशन",
-      subtitle: "प्रीमियम लाइटवेट लेआउट्स",
-      icon: Laptop,
-      progress: "96%",
-      color: "from-orange-500 to-amber-500",
-      accent: "rgba(245, 158, 11, 0.4)",
-      description: "ब्लॉगर टेम्पलेट्स के लिए अल्ट्रा-फास्ट कस्टम XML टेम्पलेट कोडिंग, थीम ट्यूनिंग, एडसेंस विज्ञापन प्लेसमेंट मैपिंग और क्लीन स्ट्रक्चरल ऑप्टिमाइजेशन।"
-    },
-    {
-      title: "एसईओ अनुकूलन (SEO)",
-      subtitle: "गूगल पेज 1 रैंकिंग प्रभुत्व",
-      icon: Search,
-      progress: "98%",
-      color: "from-emerald-500 to-teal-400",
-      accent: "rgba(16, 185, 129, 0.4)",
-      description: "गूगल क्रॉलर्स के लिए JSON-LD स्कीमा, ट्रांजैक्शनल कीवर्ड क्लस्टर्स, ऑर्गेनिक साइटमैप हायरार्की और कोर वेब वाइटल्स स्पीड ऑडिट।"
-    },
-    {
-      title: "एआई वेबसाइट डेवलपमेंट",
-      subtitle: "शानदार आधुनिक इंटरफेस",
-      icon: Sparkles,
-      progress: "96%",
-      color: "from-purple-500 to-pink-400",
-      accent: "rgba(168, 85, 247, 0.4)",
-      description: "Vite, React और Tailwind CSS का उपयोग करके बनाए गए ग्लासमोर्फिक वेब ऐप्स। स्मूथ फ्लोटिंग स्टेट्स और फुली रेस्पॉन्सिव आधुनिक फनल्स।"
-    },
-    {
-      title: "कंटेंट रणनीति (Content Strategy)",
-      subtitle: "एडसेंस-फ्रेंडली राइटिंग साइलोस",
-      icon: BookOpen,
-      progress: "94%",
-      color: "from-cyan-500 to-blue-400",
-      accent: "rgba(6, 182, 212, 0.4)",
-      description: "गूगल एडसेंस अप्रूवल और रियल यूजर वैल्यू के लिए हाई-वैल्यू ब्लॉग पोस्ट्स, टॉपिकल मैप्स और इंटरनल लिंकिंग पैटर्न्स की पूरी प्लानिंग।"
-    },
-    {
-      title: "सोशल मीडिया ग्रोथ",
-      subtitle: "वायरल कंटेंट मल्टीप्लायर्स",
-      icon: Megaphone,
-      progress: "93%",
-      color: "from-violet-500 to-fuchsia-400",
-      accent: "rgba(139, 92, 246, 0.4)",
-      description: "ब्रांड अथॉरिटी और सोशल प्रेजेंस स्थापित करने के लिए व्यापक सोशल मीडिया एसेट्स, वायरल पोस्ट कॉपी और आकर्षक कैरोसेल डिज़ाइन्स।"
-    },
-    {
-      title: "ऑटोमेशन समाधान",
-      subtitle: "समय और लागत की बचत",
-      icon: Layers,
-      progress: "92%",
-      color: "from-teal-500 to-emerald-400",
-      accent: "rgba(20, 184, 166, 0.4)",
-      description: "कस्टम एपीआई इंटीग्रेशन, ऑटोमेटेड कंटेंट डिस्ट्रीब्यूशन और उन्नत ChatGPT/Claude प्रॉम्प्ट्स का उपयोग करके मैनुअल काम को 90% तक कम करना।"
     }
   ];
 

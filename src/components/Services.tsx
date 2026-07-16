@@ -50,9 +50,9 @@ export default function Services({
           </div>
           
           <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-            {language === "en" ? "Premium Services Built To" : "डिजिटल ट्रैफिक को बदलने के लिए"}{" "}
+            Premium Services Built To{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-300 to-pink-400">
-              {language === "en" ? "Convert Traffic" : "प्रीमियम सेवाएं"}
+              Convert Traffic
             </span>
           </h2>
           

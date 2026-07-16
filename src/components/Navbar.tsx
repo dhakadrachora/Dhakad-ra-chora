@@ -195,32 +195,6 @@ export default function Navbar({
               </button>
             </div>
 
-            {/* Language Selector Toggle */}
-            <div className="flex items-center gap-1 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-1 rounded-xl">
-              <button
-                onClick={() => setLanguage("en")}
-                className={`flex items-center gap-0.5 px-2 py-1 rounded-lg text-[10px] font-sans font-black transition-all cursor-pointer ${
-                  language === "en"
-                    ? "bg-purple-600 text-white shadow-sm"
-                    : "text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300"
-                }`}
-                title="Switch to English"
-              >
-                EN
-              </button>
-              <button
-                onClick={() => setLanguage("hi")}
-                className={`flex items-center gap-0.5 px-2 py-1 rounded-lg text-[10px] font-sans font-black transition-all cursor-pointer ${
-                  language === "hi"
-                    ? "bg-purple-600 text-white shadow-sm"
-                    : "text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300"
-                }`}
-                title="हिन्दी में बदलें"
-              >
-                हिन्दी
-              </button>
-            </div>
-
             {/* Instant Contact CTA */}
             <button
               id="header-cta-button"
@@ -228,7 +202,7 @@ export default function Navbar({
               className="relative px-4.5 py-1.8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold tracking-wider rounded-xl hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition duration-300 group overflow-hidden flex items-center gap-1 cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5 text-cyan-200 animate-pulse" />
-              <span>{language === "en" ? "Let's Talk" : "चैट करें"}</span>
+              <span>Let's Talk</span>
               <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               <div className="absolute inset-0 w-1/2 bg-white/20 skew-x-[-30deg] -translate-x-full group-hover:animate-shine" style={{ transition: "none" }} />
             </button>
@@ -252,15 +226,6 @@ export default function Navbar({
             >
               <Globe className="w-3 h-3 text-blue-500 dark:text-purple-400" />
               <span>{currency === "USD" ? "$" : "₹"}</span>
-            </button>
-
-            {/* Mobile Language Selector Toggle */}
-            <button
-              onClick={() => setLanguage(language === "en" ? "hi" : "en")}
-              className="flex items-center gap-1 px-2.5 py-1 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg font-sans text-[10px] font-bold text-purple-600 dark:text-purple-400"
-            >
-              <Globe className="w-3 h-3 text-purple-500" />
-              <span>{language === "en" ? "EN" : "हिन्दी"}</span>
             </button>
 
             {/* Mobile Menu Button */}
